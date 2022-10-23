@@ -20,17 +20,26 @@
   --black: #000000;
 }
 
-*, body {
+/* GLOBAL STYLES */
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
+  color: var(--white);
   font-family: 'Poppins', Arial, sans-serif;
-  background: rgb(15,6,45);
-  background: linear-gradient(180deg, rgba(15,6,45,1) 4%, rgba(57,53,112,1) 50%, rgba(67,67,122,1) 73%, rgba(91,91,168,1) 99%);
-  background-repeat: no-repeat;
-  width: auto;
   height: 100vh;
+  background: rgb(15,6,45);
+  background: linear-gradient(180deg, rgba(15,6,45,1) 17%, rgba(57,53,112,1) 58%, rgba(67,67,122,1) 79%, rgba(91,91,168,1) 100%);
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
