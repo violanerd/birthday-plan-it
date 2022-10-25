@@ -1,5 +1,5 @@
-# Project Name
-Birthday Plan It
+## Project Name
+# Birthday Plan It
 
 
 ## Project Summary
@@ -41,22 +41,23 @@ An app to plan your birthday party and track rsvp's.
 
 ## Tech Stack
 
-- What languages is it written with: 
+- What languages is it written with: MERN Stack
 
-- What libraries are used: 
+- What libraries are used: React Icons
 
-- Other: 
-
+- Other:
 
 ## APIs
 
--
+- GraphQL API
 
 ## MVP (Minimum Viable Product)
 
--
+- An app that users can login to, pick out a theme and fill out a form to create a party invitation. Guests are emailed an invite link and can go to the app to RSVP. Users can see their party guest list and who has RSVP'd.
 
 
 ## Stretch Goals
 
--
+- Incorporate Strip for birthday gifts
+- Incorporate Google API for suggestions
+- Way to suggest party music
