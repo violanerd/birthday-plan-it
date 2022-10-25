@@ -60,7 +60,7 @@ const resolvers = {
       if (context.user) {
         const party = await Party.create({
           ...args,
-          username: context.user.username,
+          host: context.user.username,
         });
 
         await User.findByIdAndUpdate(
@@ -74,11 +74,12 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    // I don't know how it'll feel about an array in the arguements so i figured it could
-    // loop through the list and invite them individually? Efficient? no. Effective? I mean... should be? Right?
+    // invite additional guests after the party is created
     inviteGuest: async (parent, args, context) => {
       if (context.user) {
       }
     },
   },
 };
+
+module.exports = resolvers;

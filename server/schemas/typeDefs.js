@@ -26,7 +26,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    users: [Users]
+    users: [User]
     user(username: String): User
     parties(username: String): [Party]
     party(_id: ID!): Party
@@ -41,7 +41,10 @@ const typeDefs = gql`
       date: String
       location: String
       theme: Int!
+      guests: [String]
     ): Party
     inviteGuest(partyId: ID!, email: String!): Party
   }
 `;
+
+module.exports = typeDefs;
