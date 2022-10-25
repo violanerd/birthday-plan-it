@@ -57,8 +57,13 @@ An app to plan your birthday party and track rsvp's.
 - An app that users can login to, pick out a theme and fill out a form to create a party invitation. Guests are emailed an invite link and can go to the app to RSVP. Users can see their party guest list and who has RSVP'd.
 
 ## Stretch Goals
-
-- Incorporate Strip for birthday gifts
+- Add comments to the party page
+- Incorporate Stripe for birthday gifts
 - Incorporate Google API for suggestions
 - Way to suggest party music
+
+## Further Development
+
+- Domain name purchase and email client set up to send emails. 
+
 
