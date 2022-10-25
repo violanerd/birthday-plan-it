@@ -25,8 +25,14 @@ const partySchema = new Schema(
       required: true,
     },
   },
-  {}
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
+
+const guestSchema
 
 const Party = model("Party", partySchema);
 
