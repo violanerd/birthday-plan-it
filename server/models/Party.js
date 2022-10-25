@@ -1,7 +1,14 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const partySchema = new Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+    },
     host: {
       type: String,
       required: true,
@@ -18,21 +25,14 @@ const partySchema = new Schema(
     location: {
       type: String,
     },
-    name: {
-      type: String,
-      required: true,
-    },
     theme: {
       type: Number,
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-    },
+
     /*
     comments: {
-        
+
     }
     */
   },
