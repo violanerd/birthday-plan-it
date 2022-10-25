@@ -1,14 +1,17 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const partySchema = new Schema(
   {
-    user: {
+    host: {
       type: String,
       required: true,
     },
-    guests: {
-      // placeholder
-    },
+    guests: [
+      {
+        type: String,
+        match: [/.+@.+\..+/, "Must match an email address!"],
+      },
+    ],
     date: {
       type: Date,
     },
@@ -19,11 +22,19 @@ const partySchema = new Schema(
       type: String,
       required: true,
     },
-    theme: {},
+    theme: {
+      type: Number,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
     },
+    /*
+    comments: {
+        
+    }
+    */
   },
   {
     toJSON: {
@@ -31,8 +42,6 @@ const partySchema = new Schema(
     },
   }
 );
-
-const guestSchema
 
 const Party = model("Party", partySchema);
 
