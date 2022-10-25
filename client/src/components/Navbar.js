@@ -6,7 +6,7 @@ import Logo from './assets/birthday-plan-it-logo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
-
+  // ACTIVATE SLIDE IN MENU BY 'click' STATE
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -31,11 +31,12 @@ const Navbar = () => {
           <Link to='/login'>Login</Link>
         </li>
       </ul>
+      {/* HAMBURGER MENU CONDITIONALS */}
       <div className='hamburger' onClick={handleClick}>
         {click ? (
-        <FaTimes size={25} style={{ color: '#fff' }} />
+          <FaTimes size={25} style={{ color: '#fff' }} />
         ) : (
-        <FaBars size={25} style={{ color: '#ffffff' }} />
+          <FaBars size={25} style={{ color: '#ffffff' }} />
         )}
       </div>
     </div>
