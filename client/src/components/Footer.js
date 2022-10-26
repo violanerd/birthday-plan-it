@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
         </Link>
         <p className='subhead'>This web application was coded and created by:</p> 
-        <p className='credits'>Madalyne Cross, Joshua Maddox & Ron Dronet</p>
+        <p className='credits'>Madalyne Cross, Joshua Haddix & Ron Dronet</p>
         <p className='copyright'>&copy; Copyright 2022</p>
       </div>
     </div>

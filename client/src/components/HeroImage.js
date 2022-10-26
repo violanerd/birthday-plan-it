@@ -17,6 +17,13 @@ const HeroImage = () => {
         <Link to='/signup' className='signup-btn'>Sign Up</Link>
         <Link to='/login' className='login-btn'>Login</Link>
       </div>
+      <div className='theme-heading'>
+        <h2 className='theme-h2'>Your choice of four themes!</h2>
+        <p className='theme-subhead'>Click on the thme of your choice to create your invitation</p>
+      </div>
+      <div className='theme-container'>
+
+      </div>
     </div>
   </div>
 }
