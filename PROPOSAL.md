@@ -1,5 +1,4 @@
-# Project Name
-Birthday Plan It
+# Birthday Plan It
 
 
 ## Project Summary
@@ -45,8 +44,6 @@ An app to plan your birthday party and track rsvp's.
 
 - What libraries are used: React Icons
 
-- Other: 
-
 
 ## APIs
 
@@ -65,5 +62,3 @@ An app to plan your birthday party and track rsvp's.
 ## Further Development
 
 - Domain name purchase and email client set up to send emails. 
-
-

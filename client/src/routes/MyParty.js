@@ -6,4 +6,4 @@ const MyParty = () => {
   )
 }
 
-export default MyParty
+export default MyParty;
