@@ -3,6 +3,10 @@ import './HeroImageStyles.css';
 import React from 'react';
 
 import HeroImg from './assets/plan-it-bkgrd.png';
+import ThemeOneThumbnail from './assets/theme01-thumbnail.jpg';
+import ThemeTwoThumbnail from './assets/theme02-thumbnail.jpg';
+import ThemeThreeThumbnail from './assets/theme03-thumbnail.jpg';
+import ThemeFourThumbnail from './assets/theme04-thumbnail.jpg';
 import { Link } from 'react-router-dom';
 
 const HeroImage = () => {
@@ -19,10 +23,29 @@ const HeroImage = () => {
       </div>
       <div className='theme-heading'>
         <h2 className='theme-h2'>Your choice of four themes!</h2>
-        <p className='theme-subhead'>Click on the thme of your choice to create your invitation</p>
+        <p className='theme-subhead'>Click on the CREATE INVITE button to create your invitation</p>
       </div>
       <div className='theme-container'>
-
+        <div className='theme-card'>
+          <img className='theme-one' src={ThemeOneThumbnail} alt='balloon-theme'/>
+          <h3 className='theme-name'>Festive Balloons</h3>
+          <Link to='/theme01' className='select-btn'>Create Invite</Link>
+        </div>
+        <div className='theme-card'>
+          <img className='theme-two' src={ThemeTwoThumbnail} alt='space-theme' />
+          <h3 className='theme-name'>Outer Space</h3>
+          <Link to='/theme02' className='select-btn'>Create Invite</Link>
+        </div>
+        <div className='theme-card'>
+          <img className='theme-three' src={ThemeThreeThumbnail} alt='dance-theme' />
+          <h3 className='theme-name'>Dance Party</h3>
+          <Link to='/theme03' className='select-btn'>Create Invite</Link>
+        </div>
+        <div className='theme-card'>
+          <img className='theme-four' src={ThemeFourThumbnail} alt='beat-box-theme' />
+          <h3 className='theme-name'>Beat Box</h3>
+          <Link to='/theme04' className='select-btn'>Create Invite</Link>
+        </div>
       </div>
     </div>
   </div>
