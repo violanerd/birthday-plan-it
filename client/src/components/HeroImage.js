@@ -23,7 +23,7 @@ const HeroImage = () => {
       </div>
       <div className='theme-heading'>
         <h2 className='theme-h2'>Your choice of four themes!</h2>
-        <p className='theme-subhead'>Click on the CREATE INVITE button to create your invitation</p>
+        <p className='theme-subhead' id='subhead'>Click on the CREATE INVITE button to create your invitation</p>
       </div>
       <div className='theme-container'>
         <div className='theme-card'>
