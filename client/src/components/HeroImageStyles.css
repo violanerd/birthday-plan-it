@@ -172,6 +172,10 @@ span {
     margin-bottom: 2.5rem;
   }
 
+  .login-btn:hover {
+    background-color: rgb(255, 230, 0, 0.2);
+  }
+
   .theme-container {
     max-width: 80%;
     margin: auto;
@@ -184,8 +188,8 @@ span {
     font-weight: 800;
   }
 
-#subhead {
-  padding-top: 10px;
+  #subhead {
+    padding-top: 10px;
     font-size: 1.25rem;
     font-weight: 300;
   }
