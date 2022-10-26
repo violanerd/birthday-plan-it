@@ -33,7 +33,8 @@ const resolvers = {
     emailGuests: async (parent, {_id}) => {
       const guests = await Party.findOne({ _id });
       console.log(guests.guests)
-      sendEmail();
+      const response = await sendEmail(guests.guests);
+      console.log(response)
       return guests
       
     }

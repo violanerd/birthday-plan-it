@@ -11,9 +11,11 @@ var transport = nodemailer.createTransport({
     }
   });
 
-const mailOptions = {
+
+async function sendEmail(maillist) {
+  const mailOptions = {
     from: 'birthdayplanit@yahoo.com', // Sender address
-    to: 'madalyne.cross@gmail.com', // List of recipients
+    to: maillist, // List of recipients
     subject: 'Test Test', // Subject line
     text: 'Testing', // Plain text body
     html: "<h1>Look at my invite</h1><p>Invite link</p>",
@@ -23,20 +25,37 @@ const mailOptions = {
     //         path: './greenmountains.jpg'
     //     }
     // ]
-};
+    };
+    try {
+      let info = await transport.sendMail(mailOptions) 
+      return info.messageId
+    } catch (err) {
+      console.log("Error", err)
+    }
+}
 
-function sendEmail() {
-    transport.sendMail(mailOptions, function(err, info) {
-        // if (err) {
-        //   res.json({status: "fail"})
-        // } else {
-        //   res.json({status: "yes"})
-        // }
-      if (err) {
-        return err
-      } else {
-        return "Success"
-      }
-      }
-)}
 module.exports = sendEmail;
+
+// working
+// function sendEmail(maillist) {
+//   const mailOptions = {
+//     from: 'birthdayplanit@yahoo.com', // Sender address
+//     to: maillist, // List of recipients
+//     subject: 'Test Test', // Subject line
+//     text: 'Testing', // Plain text body
+//     html: "<h1>Look at my invite</h1><p>Invite link</p>",
+//     // attachments: [
+//     //     {
+//     //         filename: "greenmountains.jpg",
+//     //         path: './greenmountains.jpg'
+//     //     }
+//     // ]
+//     };
+//     transport.sendMail(mailOptions, function(err, info) {
+//       if (err) {
+//         return err
+//       } else {
+//         return "Success"
+//       }
+//       }
+// )}

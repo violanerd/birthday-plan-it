@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import {EMAIL_GUESTS} from '../utils/queries'
 
 function EmailButton () {
 
     const [sendEmail, {data}] = useLazyQuery(EMAIL_GUESTS)
-    if (data) console.log(data)
-    
+    useEffect(() => {
+        if (data) {
+            console.log(data)
+          alert("emails sent successfully!")
+        }
+      }, [data]);
 
     return (
         <div>
