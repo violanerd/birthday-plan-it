@@ -30,10 +30,10 @@
 body {
   color: var(--white);
   font-family: 'Poppins', Arial, sans-serif;
-  height: 100vh;
-  background: rgb(15,6,45);
+  /* height: 100vh; */
+  /* background: rgb(15,6,45);
   background: linear-gradient(180deg, rgba(15,6,45,1) 17%, rgba(57,53,112,1) 58%, rgba(67,67,122,1) 79%, rgba(91,91,168,1) 100%);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 ul {
