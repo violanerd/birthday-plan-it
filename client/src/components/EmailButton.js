@@ -1,33 +1,19 @@
 import React from "react";
+import { useLazyQuery } from '@apollo/client';
+import {EMAIL_GUESTS} from '../utils/queries'
 
 function EmailButton () {
 
-    async function handleSendEmail(e) {
-        e.preventDefault();
-        const response = await fetch("http://localhost:3001/myparty", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            }
-        })
-        // .then((res) => res.json())
-        // .then(async (res) => {
-        //     const resData = await res;
-        //     console.log(resData)
-        //     if (resData.status === "success") {
-        //         alert("Message Sent");
-        //       } else if (resData.status === "fail") {
-        //         alert("Message failed to send");
-        //       }
-        //     })
-        console.log(response)
-    }
+    const [sendEmail, {data}] = useLazyQuery(EMAIL_GUESTS)
+    if (data) console.log(data)
+    
 
     return (
         <div>
-            <button onClick={handleSendEmail}>Email my invite!</button>
+            <button onClick={() => sendEmail({ variables: {id : "6358902ec795de37cb8bdc9e" }})}>Email my invite!</button>
         </div>
     )
 }
 
 export default EmailButton;
+

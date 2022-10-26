@@ -30,6 +30,7 @@ const typeDefs = gql`
     user(username: String): User
     parties(username: String): [Party]
     party(_id: ID!): Party
+    emailGuests(_id: ID!): Party
   }
 
   type Mutation {

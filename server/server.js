@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // email testing code
-app.use(cors({ origin: "*" }));
-app.post("/myparty", function (req, res) {
-  const response = sendEmail();
-  res.json(response)
-})
+// app.use(cors({ origin: "*" }));
+// app.post("/myparty", function (req, res) {
+//   const response = sendEmail();
+//   res.json(response)
+// })
 
 
 // Serve up static assets
