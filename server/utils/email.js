@@ -35,27 +35,3 @@ async function sendEmail(maillist) {
 }
 
 module.exports = sendEmail;
-
-// working
-// function sendEmail(maillist) {
-//   const mailOptions = {
-//     from: 'birthdayplanit@yahoo.com', // Sender address
-//     to: maillist, // List of recipients
-//     subject: 'Test Test', // Subject line
-//     text: 'Testing', // Plain text body
-//     html: "<h1>Look at my invite</h1><p>Invite link</p>",
-//     // attachments: [
-//     //     {
-//     //         filename: "greenmountains.jpg",
-//     //         path: './greenmountains.jpg'
-//     //     }
-//     // ]
-//     };
-//     transport.sendMail(mailOptions, function(err, info) {
-//       if (err) {
-//         return err
-//       } else {
-//         return "Success"
-//       }
-//       }
-// )}

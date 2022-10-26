@@ -32,11 +32,9 @@ const resolvers = {
     },
     emailGuests: async (parent, {_id}) => {
       const guests = await Party.findOne({ _id });
-      console.log(guests.guests)
       const response = await sendEmail(guests.guests);
       console.log(response)
       return guests
-      
     }
 
     // Future Dev: Get a list of all parties you've been invited to?

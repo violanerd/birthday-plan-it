@@ -1,6 +1,4 @@
 const express = require("express");
-const cors = require("cors")
-const sendEmail = require("./utils/email")
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 
@@ -19,13 +17,6 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-// email testing code
-// app.use(cors({ origin: "*" }));
-// app.post("/myparty", function (req, res) {
-//   const response = sendEmail();
-//   res.json(response)
-// })
 
 
 // Serve up static assets
