@@ -91,7 +91,10 @@ span {
 
 @media screen and (max-width: 568px) {
   .hero {
-    padding-bottom: 350px;
+    padding-bottom: 450px;
+  }
+  .hero .content {
+    top: 60%;
   }
 
   .hero .content h1 {
