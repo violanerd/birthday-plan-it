@@ -13,8 +13,6 @@
 }
 
 .image-container {
-  /* width: 100%;
-  height: 100%; */
   position: relative;
 }
 
@@ -130,7 +128,7 @@ span {
 
 .theme-name {
   padding: 6px 0 10px 0;
-  color: var(--med-vibrant-purple);
+  color: var(--med-purple);
   font-size: 1.2rem;
   text-align: center;
 }
@@ -154,10 +152,10 @@ span {
 
 @media screen and (max-width: 568px) {
   .hero {
-    height: 3250px;
+    height: 3450px;
   }
   .hero .content {
-    top: 1760px;
+    top: 1870px;
   }
 
   .hero .content h1 {
@@ -177,7 +175,7 @@ span {
   }
 
   .theme-container {
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     grid-template-columns: 1fr;
   }
@@ -192,5 +190,10 @@ span {
     padding-top: 10px;
     font-size: 1.25rem;
     font-weight: 300;
+  }
+
+  .theme-name {
+    font-size: 1.6rem;
+    text-align: center;
   }
 }

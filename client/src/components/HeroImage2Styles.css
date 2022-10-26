@@ -3,15 +3,21 @@
   position: relative;
   width: 100%;
   height: 60vh;
-  background: rgb(15,6,45);
-  background: linear-gradient(180deg, rgba(15,6,45,1) 17%, rgba(57,53,112,1) 58%, rgba(67,67,122,1) 79%, rgba(91,91,168,1) 100%);
+  background: rgb(15, 6, 45);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 6, 45, 1) 17%,
+    rgba(57, 53, 112, 1) 58%,
+    rgba(67, 67, 122, 1) 79%,
+    rgba(91, 91, 168, 1) 100%
+  );
   background-repeat: no-repeat;
   z-index: -5;
 }
 
 .hero-image::before {
   content: "";
-  background: url('./assets/plan-it-bkgrd.png');
+  background: url("./assets/plan-it-bkgrd.png");
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
@@ -54,15 +60,12 @@
 
 @media screen and (max-width: 568px) {
   .hero-image h1 {
-  font-size: 3rem;
-  text-align: center;
+    font-size: 3rem;
+    text-align: center;
   }
 
-.hero-image p {
-  font-size: 1.25rem;
-  text-align: center;
+  .hero-image p {
+    font-size: 1.25rem;
+    text-align: center;
   }
 }
-
-
-
