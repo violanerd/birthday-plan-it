@@ -1,12 +1,13 @@
 .footer {
   width: 100%;
-  height: 100%;
+  padding: 2.5rem;
   background-color: var(--drk-vibrant-purple);
 }
 
 .footer-container {
+  margin: auto;
+  max-width: 1140px;
   align-items: center;
-  padding: 2.5rem 0;
   justify-content: center;
   text-align: center;
 }
@@ -16,6 +17,18 @@
   padding-bottom: .75rem
 }
 
+.footer-container .subhead {
+  padding-bottom: .3rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
 .footer-container .credits {
-  padding-bottom: .75rem;
+  font-size: 1.3rem;
+  padding-bottom: .3rem;
+}
+
+.footer-container .copyright {
+  font-weight: 200;
+  letter-spacing: 1px;
 }

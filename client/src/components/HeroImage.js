@@ -12,7 +12,7 @@ const HeroImage = () => {
     </div>
     <div className='content'>
       <h1>Plan and personalize your birthday party!</h1>
-      <p>Here at <span>Birthday Plan It</span> we help you plan your birthday party by sending your guests a cool invitation. Simply sign up to create an account then pick a theme from the thumbnails below. Once you pick a theme you will fill out the form and submit it to generate the invitation. You'll also create a list of email addresses you want the invitation sent to. So let's get the party started!</p>
+      <p>Welcome to <span>Birthday Plan It</span> where we help you plan your birthday party by sending your guests a cool invitation. Simply sign up to create an account then pick a theme from the thumbnails below. Once you pick a theme you will fill out the form and submit it to generate an invitation link. Then you'll create an email list containing your guests emails that you want the invitation sent to. So let's get the party started!</p>
       <div className='buttons-container'>
         <Link to='/signup' className='signup-btn'>Sign Up</Link>
         <Link to='/login' className='login-btn'>Login</Link>

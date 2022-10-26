@@ -13,8 +13,9 @@ const Footer = () => {
             <img src={Logo} alt="logo" className='birthday-plan-it-logo' />
           </div>
         </Link>
-        <p className='credits'>This web application was coded and created by: Madalyne Cross, Joshua Maddox and Ron Dronet</p>
-        <p>&copy; Copyright 2022</p>
+        <p className='subhead'>This web application was coded and created by:</p> 
+        <p className='credits'>Madalyne Cross, Joshua Maddox & Ron Dronet</p>
+        <p className='copyright'>&copy; Copyright 2022</p>
       </div>
     </div>
   )
