@@ -1,7 +1,7 @@
 const { User, Party } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const sendEmail = require("../utils/email")
+const sendEmail = require("../utils/email");
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -23,19 +23,19 @@ const resolvers = {
         .select("-__v -password")
         .populate("parties");
     },
-    parties: async (parent, { username }) => {
-      const params = username ? { username } : {};
+    parties: async (parent, { host }) => {
+      const params = host ? { host } : {};
       return Party.find(params).sort({ createdAt: -1 });
     },
     party: async (parent, { _id }) => {
       return Party.findOne({ _id });
     },
-    emailGuests: async (parent, {_id}) => {
+    emailGuests: async (parent, { _id }) => {
       const guests = await Party.findOne({ _id });
       const response = await sendEmail(guests.guests);
-      console.log(response)
-      return guests
-    }
+      console.log(response);
+      return guests;
+    },
 
     // Future Dev: Get a list of all parties you've been invited to?
     // Filter out Parties with dates that have already passed?
