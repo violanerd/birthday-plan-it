@@ -12,11 +12,10 @@ function PartyForm() {
                         <img className='theme-three' src={ThemeThree} alt='dance-party-theme' />
                         <div className='input-fields'>
                             <label className='you-r-invited' htmlFor='name'>YOU'RE INVITED!</label>
-                            <input className='host-name' type='text' name='name' placeholder='Your name goes here' />
+                            <input className='host-name' type='text' name='name' placeholder='Your name' />
                             <p className='label label-p' >would like to invite you to their birthday party!</p>
                             <label className='label' htmlFor='location'>The party will be held at</label>
-                            <textarea placeholder="Your address"
-                                defaultValue="Hello!"
+                            <textarea placeholder="Party address"
                                 className="location"
                                 rows='2'
                                 maxlength='100'
@@ -30,14 +29,6 @@ function PartyForm() {
                             <div className='date-time'>
                             <input className='time' type='time' name='time' />
                             </div>
-                            {/* <textarea
-                            placeholder="Message to your guests"
-                            value=""
-                            className=""
-                            onChange=""
-                            name="description"
-                            max-length='5'
-                        ></textarea> */}
                             <button className='create-invite-btn' type='submit'>
                                 Create Invitation
                             </button>

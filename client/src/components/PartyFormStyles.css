@@ -163,11 +163,23 @@ input::placeholder {
 
   form input,
   form textarea {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   form textarea {
     width: 180px;
+  }
+
+  .location {
+    font-size: 14px;
+  }
+
+  .date-time input {
+  font-size: 14px;
+}
+
+  input::placeholder {
+    font-size: 14px;
   }
 
   .label {
