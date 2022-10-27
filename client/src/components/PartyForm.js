@@ -2,7 +2,8 @@ import React from 'react';
 
 function PartyForm () {
     return (
-        <form className="" onSubmit="" style={{color: "black"}}>
+        <div className='form-container'>
+        <form className="form" onSubmit="" style={{color: "black"}}>
             <div>
                 <label htmlFor="name">Give this party a name!</label>
                 <input type="text" name="name" />
@@ -32,6 +33,7 @@ function PartyForm () {
             Create My Invitation
             </button>
         </form>
+        </div>
     )
 }
 
