@@ -43,7 +43,7 @@ function SignUp({ handleModals }) {
       <div className="modalContainer">
         <h3 className="modalTitle">Sign Up!</h3>
 
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className="email-password-container">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -52,24 +52,33 @@ function SignUp({ handleModals }) {
             value={formState.username}
             onChange={handleChange}
           />
+          <div className="email-field">
+            <label htmlFor="email" className="email-label">
+              Email:
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="email-password-input"
+              value={formState.email}
+              onChange={handleChange}
+            />
+          </div>
 
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formState.email}
-            onChange={handleChange}
-          />
-
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="********"
-            value={formState.password}
-            onChange={handleChange}
-          />
+          <div className="password-field">
+            <label htmlFor="password" className="password-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              name="password"
+              placeholder="********"
+              className="email-password-input"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
 
           <button type="submit">Sign Up!</button>
         </form>
@@ -77,11 +86,19 @@ function SignUp({ handleModals }) {
         {error && <div>Sign Up Failed</div>}
 
         <div className="flex-row">
-          <button type="button" onClick={() => handleModals("signup")}>
-            Close
-          </button>
-          <button type="button" onClick={() => handleModals("login")}>
+          <button
+            type="button"
+            className="signup-button"
+            onClick={() => handleModals("login")}
+          >
             Login
+          </button>
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => handleModals("signup")}
+          >
+            Close
           </button>
         </div>
       </div>

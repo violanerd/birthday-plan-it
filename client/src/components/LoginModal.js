@@ -42,34 +42,53 @@ function Login({ handleModals }) {
     <div className="modalBackdrop">
       <div className="modalContainer">
         <h3 className="modalTitle">Login!</h3>
-        <form onSubmit={handleFormSubmit}>
-          <label htmlFor="email">Email Address:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formState.email}
-            onChange={handleChange}
-          />
+        <form onSubmit={handleFormSubmit} className="email-password-container">
+          <div className="email-field">
+            <label htmlFor="email" className="email-label">
+              Email Address:
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="email-password-input"
+              value={formState.email}
+              onChange={handleChange}
+            />
+          </div>
 
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="********"
-            value={formState.password}
-            onChange={handleChange}
-          />
+          <div className="password-field">
+            <label htmlFor="password" className="password-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              name="password"
+              placeholder="********"
+              className="email-password-input"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
+
           <button type="submit">Login!</button>
         </form>
 
         {error && <div>Login failed</div>}
 
         <div className="flex-row">
-          <button type="button" onClick={() => handleModals("signup")}>
+          <button
+            type="button"
+            className="signup-button"
+            onClick={() => handleModals("signup")}
+          >
             Sign Up
           </button>
-          <button type="button" onClick={() => handleModals("login")}>
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => handleModals("login")}
+          >
             Close
           </button>
         </div>

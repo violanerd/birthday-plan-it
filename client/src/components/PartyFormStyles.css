@@ -1,0 +1,190 @@
+body {
+  background-color: var(--darkest-purple);
+  background-image: url("./assets/theme-3-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.theme-container-form {
+  display: block;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-field-container {
+  justify-content: center;
+  margin: auto;
+  display: inline-block;
+}
+
+.form {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-three {
+  width: 500px;
+  object-fit: cover;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.input-fields {
+  top: 125px;
+  left: 125px;
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  width: 275px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.you-r-invited {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 1px 2px 5px rgba(48, 28, 91, 0.8);
+  margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+  padding: 6px 5px;
+  font-size: 36px;
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--drk-vibrant-purple);
+  font-weight: 700;
+  outline-color: var(--pale-purple);
+}
+
+input::placeholder {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+
+.label {
+  font-weight: 500;
+}
+
+.label-p {
+  padding: 0 0 12px 0;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+
+.date, .time, .location {
+  margin-bottom: 12px;
+  padding: 2px;
+}
+
+.location {
+  width: 100%;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+
+.location::placeholder {
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+
+.date-time input {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+
+.create-invite-btn {
+  margin-top: 15px;
+  background-color: var(--drk-vibrant-purple);
+  outline: none;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .7rem;
+  transition: 0.3s;
+}
+
+.create-invite-btn:hover {
+  background-color: var(--header-red);
+}
+
+@media screen and (max-width: 568px) {
+  .theme-container-form {
+    margin-bottom: 50px;
+  }
+  
+  .theme-three {
+    width: 400px;
+  }
+
+  .you-r-invited {
+    font-size: 1.5rem;
+  }
+
+  .input-fields {
+    top: 100px;
+    left: 115px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  form textarea {
+    width: 180px;
+  }
+
+  .location {
+    font-size: 14px;
+  }
+
+  .date-time input {
+  font-size: 14px;
+}
+
+  input::placeholder {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}
