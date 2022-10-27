@@ -25,6 +25,7 @@ const HeroImage = () => {
     }
   }
 
+
   return (
     <div className="hero">
       {isSignUpOpen && <SignUp handleModals={handleModals}></SignUp>}
@@ -69,7 +70,7 @@ const HeroImage = () => {
               alt="balloon-theme"
             />
             <h3 className="theme-name">Festive Balloons</h3>
-            <Link to="/theme01" className="select-btn">
+            <Link to="/theme" className="select-btn" state={{partyTheme: 1}}>
               Create Invite
             </Link>
           </div>
@@ -80,7 +81,7 @@ const HeroImage = () => {
               alt="space-theme"
             />
             <h3 className="theme-name">Outer Space</h3>
-            <Link to="/theme02" className="select-btn">
+            <Link to="/theme" className="select-btn" state={{partyTheme: 2}}>
               Create Invite
             </Link>
           </div>
@@ -91,7 +92,7 @@ const HeroImage = () => {
               alt="dance-theme"
             />
             <h3 className="theme-name">Dance Party</h3>
-            <Link to="/theme03" className="select-btn">
+            <Link to="/theme" className="select-btn" state={{partyTheme: 3}}>
               Create Invite
             </Link>
           </div>
@@ -102,7 +103,7 @@ const HeroImage = () => {
               alt="beat-box-theme"
             />
             <h3 className="theme-name">Beat Box</h3>
-            <Link to="/theme04" className="select-btn">
+            <Link to="/theme" className="select-btn" state={{partyTheme: 4}}>
               Create Invite
             </Link>
           </div>
