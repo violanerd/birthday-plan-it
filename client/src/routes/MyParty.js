@@ -12,6 +12,6 @@ const MyParty = () => {
       <EmailButton />
     </div>
   </div>
-
+}
 
 export default MyParty;
