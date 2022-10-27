@@ -41,7 +41,7 @@ body {
 }
 
 .input-fields {
-  top: 135px;
+  top: 125px;
   left: 125px;
   z-index: 2;
   position: absolute;
@@ -58,7 +58,7 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--white);
-  text-shadow: 1px 1px 6px rgba(48, 28, 91, 0.5);
+  text-shadow: 1px 2px 5px rgba(48, 28, 91, 0.8);
   margin-bottom: 10px;
 }
 
@@ -121,7 +121,7 @@ input::placeholder {
 }
 
 .create-invite-btn {
-  margin-top: 25px;
+  margin-top: 15px;
   background-color: var(--drk-vibrant-purple);
   outline: none;
   border: none;
