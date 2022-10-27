@@ -1,17 +1,19 @@
-import React from 'react';
-import EmailButton from '../components/EmailButton';
-
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import React from "react";
+import EmailButton from "../components/EmailButton";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const MyParty = () => {
-  return <div>
-    <Navbar />
-    <Footer />
-    <div>MyParty
-      <EmailButton />
+  return (
+    <div>
+      <Navbar />
+      <Footer />
+      <div>
+        MyParty
+        <EmailButton />
+      </div>
     </div>
-  </div>
-
+  );
+};
 
 export default MyParty;
