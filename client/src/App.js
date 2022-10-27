@@ -10,6 +10,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import Theme from './routes/Theme'
 import { setContext } from '@apollo/client/link/context';
 import { Route, Routes } from 'react-router-dom';
 
@@ -41,6 +42,7 @@ function App() {
         <Route path='/myparty' element={<MyParty />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/theme' element={<Theme />} />
       </Routes>
     </>
     </ApolloProvider>
