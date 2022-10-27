@@ -43,6 +43,8 @@ img {
 }
 
 .nav-menu .login-btn {
+  position: relative;
+  top: -2px;
   border: 3px solid var(--white);
   margin-left: 14px;
   padding: 3px 20px;
@@ -72,7 +74,7 @@ img {
     position: absolute;
     top: 0;
     left: -100%;
-    z-index: -3;
+    z-index: -1;
     transition: 0.3s;
   }
 
