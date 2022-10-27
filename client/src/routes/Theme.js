@@ -1,16 +1,14 @@
 import React from 'react';
-import PartyForm from '../components/PartyForm'
+import PartyForm from '../components/PartyForm';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-import ThemeOneThumbnail from '../components/assets/theme01-thumbnail.jpg';
-
-function Theme () {
+function Theme() {
     return (
         <div>
-            <div className='theme-card'>
-          <img className='theme-one' src={ThemeOneThumbnail} alt='balloon-theme'/>
-          <PartyForm />
-          <h3 className='theme-name'>Festive Balloons</h3>
-        </div>
+            <Navbar />
+            <PartyForm />
+            <Footer />
         </div>
     )
 }
