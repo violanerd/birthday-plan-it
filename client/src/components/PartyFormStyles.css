@@ -121,7 +121,7 @@ input::placeholder {
 }
 
 .create-invite-btn {
-  margin-top: 25px;
+  margin-top: 15px;
   background-color: var(--drk-vibrant-purple);
   outline: none;
   border: none;
