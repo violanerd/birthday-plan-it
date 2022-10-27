@@ -1,5 +1,5 @@
 body {
-  background-color: var(--dark-purple);
+  background-color: var(--darkest-purple);
   background-image: url("./assets/theme-3-background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@ body {
 }
 
 .form {
-  box-shadow: 0 0 20px var(--drk-vibrant-purple);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   position: relative;
   border-radius: 8px;
   margin: 0 auto;
@@ -64,11 +64,12 @@ body {
 
 form input,
 form textarea {
+  border-radius: 8px;
   text-align: center;
   width: 100%;
   display: block;
   margin-bottom: 5px;
-  padding: 2px 5px;
+  padding: 6px 5px;
   font-size: 36px;
   background-color: transparent;
   border: 2px solid var(--white);
@@ -163,7 +164,8 @@ input::placeholder {
 
   form input,
   form textarea {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 800;
   }
 
   form textarea {
