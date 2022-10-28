@@ -2,16 +2,12 @@ const { Schema, model } = require("mongoose");
 
 const partySchema = new Schema(
   {
-    name: {
+    hostName: {
       type: String,
       required: true,
     },
     description: {
       type: String,
-    },
-    host: {
-      type: String,
-      required: true,
     },
     guests: [
       {
@@ -21,6 +17,9 @@ const partySchema = new Schema(
     ],
     date: {
       type: Date,
+    },
+   time: {
+      type: String,
     },
     location: {
       type: String,
