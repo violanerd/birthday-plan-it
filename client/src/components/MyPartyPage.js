@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PARTY } from '../utils/queries';
 
 import './MyPartyPageStyles.css';
-// import ThemeOne from "./assets/theme01.jpg";
-// import ThemeTwo from "./assets/theme02.jpg";
+import ThemeOne from "./assets/theme01.jpg";
+import ThemeTwo from "./assets/theme02.jpg";
 import ThemeThree from './assets/theme03.jpg';
-// import ThemeFour from "./assets/theme04.jpg";
+import ThemeFour from "./assets/theme04.jpg";
+import backgroundOne from "./assets/theme-1-background.png"
+import backgroundTwo from "./assets/theme-2-background.png"
+import backgroundThree from "./assets/theme-3-background.png"
+import backgroundFour from "./assets/theme-4-background.png"
 
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
@@ -18,6 +22,28 @@ const MyPartyPage = () => {
   })
 
   const party = data?.party || {}
+
+
+  const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne)
+  useEffect(()=> {
+     
+      if (party.theme === 2){
+          document.body.style.backgroundImage = `url(${backgroundTwo})`
+          setRenderPartyTheme(ThemeTwo)
+      } else if (party.theme === 3){
+          document.body.style.backgroundImage = `url(${backgroundThree})`
+          setRenderPartyTheme(ThemeThree)
+      } else if (party.theme === 4){
+          document.body.style.backgroundImage = `url(${backgroundFour})`
+          setRenderPartyTheme(ThemeFour)
+      } else {
+          setRenderPartyTheme(ThemeOne)
+          document.body.style.backgroundImage = `url(${backgroundOne})`
+      }
+      }, [party.theme]) 
+
+
+
   if (loading) {
     return <div>Loading...</div>
   }
@@ -25,7 +51,7 @@ const MyPartyPage = () => {
   return (
     <div className='emailer-container'>
       <div className='left-container'>
-        <img className='theme-three' src={ThemeThree} alt='dance-party-theme' />
+        <img className='theme-three' src={renderPartyTheme} alt='dance-party-theme' />
         <p style={{color: "black"}}>{party.hostName} is the host of this party</p>
       </div>
       <div className='right-container'>

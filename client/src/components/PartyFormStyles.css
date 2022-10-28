@@ -1,6 +1,6 @@
 body {
   background-color: var(--darkest-purple);
-  background-image: url("./assets/theme-3-background.png");
+  /* background-image: url("./assets/theme-3-background.png"); set on PartyForm page*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
