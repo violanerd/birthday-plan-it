@@ -3,7 +3,7 @@ import "./HeroImageStyles.css";
 import React, { useState } from "react";
 import SignUp from "./SignUpModal";
 import Login from "./LoginModal";
-import HeroImg from "./assets/plan-it-bkgrd.png";
+// import HeroImg from "./assets/plan-it-bkgrd.png";
 import ThemeOneThumbnail from "./assets/theme01-thumbnail.jpg";
 import ThemeTwoThumbnail from "./assets/theme02-thumbnail.jpg";
 import ThemeThreeThumbnail from "./assets/theme03-thumbnail.jpg";
@@ -31,11 +31,11 @@ const HeroImage = () => {
       {isSignUpOpen && <SignUp handleModals={handleModals}></SignUp>}
       {isLoginOpen && <Login handleModals={handleModals}></Login>}
       <div className="image-container">
-        <img
+        {/* <img
           className="background-watermark"
           alt="planet-background"
           src={HeroImg}
-        />
+        /> */}
       </div>
       <div className="content">
         <h1>Plan and personalize your birthday party!</h1>
