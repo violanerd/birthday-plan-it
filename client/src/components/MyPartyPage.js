@@ -7,6 +7,7 @@ import ThemeThree from './assets/theme03.jpg';
 // import ThemeFour from "./assets/theme04.jpg";
 
 const MyPartyPage = () => {
+  
   return (
     <div className='emailer-container'>
       <div className='left-container'>

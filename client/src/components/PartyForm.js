@@ -38,12 +38,12 @@ function PartyForm({partyTheme}) {
     const handlePartyFormSubmit = async (e) => {
         e.preventDefault();
         console.log(partyFormState);
+        let partyId;
         try {
             const { data }= await addParty({
               variables: { ...partyFormState },
             });
-            console.log(data)
-            console.log("data resturned", data.addParty._id)
+            partyId = data.addParty._id
           } catch (e) {
             console.error(e)
             console.log(error);
@@ -51,6 +51,7 @@ function PartyForm({partyTheme}) {
   
         setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
         // await party creation 
+        window.location.assign(`/myparty/${partyId}`)
         // use id in params
         // going to redirect to view invitation and invite guests
         //myparty with party id
