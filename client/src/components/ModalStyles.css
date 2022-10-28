@@ -10,12 +10,12 @@
 }
 
 .modalContainer {
-  top: 35%;
+  top: 25%;
   position: relative;
   background: var(--white);
-  box-shadow: 0 0 25px rgb(48, 28, 91);
+  box-shadow: 0 0 25px rgb(39, 21, 77);
   border-radius: 5px;
-  width: 430px;
+  width: 380px;
   margin: auto;
   padding: 15px;
   text-align: center;
@@ -39,13 +39,15 @@
 }
 
 .email-password-container {
-  width: auto;
-  margin: 0 auto;
+  width: 350px;
+  margin: auto;
   justify-content: center;
   text-align: center;
 }
 
-.email-field, .password-field {
+.username-field, .email-field, .password-field {
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 15px;
   color: var(--lt-purple);
   font-weight: 600;
@@ -53,18 +55,22 @@
 }
 
 .email-label {
-  padding-right: 10px;
   font-size: 1.1rem;
 }
 
 .password-label {
-  padding-right: 8px;
+  font-size: 1.1rem;
+}
+
+.username-label {
   font-size: 1.1rem;
 }
 
 .email-password-input {
+  color: var(--med-purple);
+  font-weight: 700;
+  font-size: 1.1rem;
   padding: 5px;
-  width: 200px;
   border: 2px solid rgba(179, 177, 196, 0.5);
   border-radius: 5px;
 }
@@ -73,13 +79,63 @@
   margin: 15px 0;
 }
 
+.username-field, .email-field, .password-field, input {
+  font-size: 12px;
+  width: 275px;
+  margin: 0 auto;
+}
+
 .signup-button {
-  padding: 6px 20px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 71px;
+  font-size: .8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--white);
+  background-color: var(--lt-purple);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0 7px 0;
+}
+
+.signup-button:hover {
+  background-color: var(--med-purple);
+  border: 3px solid var(--med-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.log-in-btn {
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 76px;
+  font-size: .8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--white);
+  background-color: var(--lt-purple);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0 7px 0;
+}
+
+.log-in-btn:hover {
+  background-color: var(--med-purple);
+  border: 3px solid var(--med-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-up-btn {
+  padding: 6px 18px;
   border-radius: 25px;
   font-size: .8rem;
   font-weight: 900;
   text-transform: uppercase;
-  border: 2px solid var(--lt-purple);
+  border: 3px solid var(--lt-purple);
   color: var(--lt-purple);
   background-color: transparent;
   margin-right: 7px;
@@ -87,8 +143,9 @@
   transition: 0.3s;
 }
 
-.signup-button:hover {
-  background-color: rgba(91, 91, 168, 0.3);
+.sign-up-btn:hover {
+  background-color: var(--lt-purple);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .login-button {
@@ -97,14 +154,35 @@
   font-size: .8rem;
   font-weight: 900;
   text-transform: uppercase;
-  border: 2px solid var(--header-red);
-  color: var(--white);
-  background-color: var(--header-red);
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
+  margin-right: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-button:hover, .sign-up-btn:hover {
+  background-color: var(--lt-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close-button {
+  padding: 6px 24px;
+  border-radius: 25px;
+  font-size: .8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
   margin-left: 7px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login-button:hover {
-  background-color: var(--drk-red);
+.close-button:hover {
+  border: 3px solid var(--header-red);
+  background-color: var(--header-red);
+  color: var(--white);
 }

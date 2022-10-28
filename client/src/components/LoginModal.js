@@ -50,7 +50,7 @@ function Login({ handleModals }) {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              // placeholder="Your Email"
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
@@ -64,29 +64,29 @@ function Login({ handleModals }) {
             <input
               type="password"
               name="password"
-              placeholder="********"
+              // placeholder="********"
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}
             />
           </div>
 
-          <button type="submit">Login!</button>
+          <button type="submit" className="log-in-btn">Login!</button>
         </form>
 
-        {error && <div>Login failed</div>}
+        {error && <div style={{color: "black"}}>Login failed</div>}
 
         <div className="flex-row">
           <button
             type="button"
-            className="signup-button"
+            className="sign-up-btn"
             onClick={() => handleModals("signup")}
           >
             Sign Up
           </button>
           <button
             type="button"
-            className="login-button"
+            className="close-button"
             onClick={() => handleModals("login")}
           >
             Close
