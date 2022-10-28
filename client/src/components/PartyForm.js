@@ -35,7 +35,10 @@ function PartyForm({partyTheme}) {
         e.preventDefault();
         console.log(partyFormState);
         setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
+        // await party creation 
+        // use id in params
         // going to redirect to view invitation and invite guests
+        //myparty with party id
     }
     return (
         <div className='background-container'>
