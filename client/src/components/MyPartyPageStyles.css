@@ -15,9 +15,6 @@ body {
   justify-content: center;
   text-align: left;
 }
-img {
-  height: 100%;
-}
 
 .left-container {
   background-color: var(--white);
