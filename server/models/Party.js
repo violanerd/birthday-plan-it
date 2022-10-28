@@ -15,10 +15,16 @@ const partySchema = new Schema(
         match: [/.+@.+\..+/, "Must match an email address!"],
       },
     ],
+    rsvps: [
+      {
+        type: String,
+        match: [/.+@.+\..+/, "Must match an email address!"],
+      },
+    ],
     date: {
       type: Date,
     },
-   time: {
+    time: {
       type: String,
     },
     location: {

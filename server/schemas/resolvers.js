@@ -2,6 +2,7 @@ const { User, Party } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const sendEmail = require("../utils/email");
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -86,6 +87,7 @@ const resolvers = {
       if (context.user) {
       }
     },
+    rsvpToParty: async (parent, args, context) => {},
   },
 };
 
