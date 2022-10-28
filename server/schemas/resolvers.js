@@ -23,8 +23,8 @@ const resolvers = {
         .select("-__v -password")
         .populate("parties");
     },
-    parties: async (parent, { host }) => {
-      const params = host ? { host } : {};
+    parties: async (parent, { hostName }) => {
+      const params = hostName ? { hostName } : {};
       return Party.find(params).sort({ createdAt: -1 });
     },
     party: async (parent, { _id }) => {

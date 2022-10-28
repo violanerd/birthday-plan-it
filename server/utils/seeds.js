@@ -6,23 +6,23 @@ db.once('open', async () => {
 
     const parties = await Party.insertMany([
         {
-            name: 'My 30th Birthday Bash',
+            hostName: 'Bobby',
             description:
             'A party to celebrate turning 30!',
-            host: 'Bobby',
             guests: ["alice@me.com", "steve@me.com"],
             date: '2022-12-09',
+            time: '7 PM',
             location: "My house",
             theme: 1
         },
         {
-            name: "Alice's birthday bonanza",
+            hostName: 'Alice',
             description:
             'A lowkey hang at my favorite bar',
-            host: 'Alice',
             guests: ["bobby@testmail.com", "guillermo@me.com", "cheryl@mail.com"],
             date: '2022-12-01',
             location: "22 Main St.",
+            time: '7 PM',
             theme: 2
         },
     ])

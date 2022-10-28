@@ -23,16 +23,16 @@ mutation AddUser($username: String!, $email: String!, $password: String!) {
 `;
 
 export const ADD_PARTY = gql`
-mutation AddParty($name: String!, $theme: Int!, $description: String, $date: String, $location: String, $guests: [String]) {
-    addParty(name: $name, theme: $theme, description: $description, date: $date, location: $location, guests: $guests) {
-      _id
-      name
-      description
-      host
-      guests
-      date
-      location
-      theme
-    }
+mutation AddParty($hostName: String!, $theme: Int!, $description: String, $date: String, $location: String, $guests: [String], $time: String) {
+  addParty(hostName: $hostName, theme: $theme, description: $description, date: $date, location: $location, guests: $guests, time: $time) {
+    _id
+    hostName
+    description
+    date
+    guests
+    location
+    time
+    theme
   }
+}
   `;

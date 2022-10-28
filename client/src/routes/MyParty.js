@@ -2,16 +2,18 @@ import React from "react";
 import EmailButton from "../components/EmailButton";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MyPartyPage from '../components/MyPartyPage';
 
 const MyParty = () => {
   return (
     <div>
       <Navbar />
-      <Footer />
-      <div>
+      <MyPartyPage />
+      {/* <div>
         MyParty
         <EmailButton />
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
-
 import './PartyFormStyles.css';
+import { useMutation } from "@apollo/client";
+import { ADD_PARTY } from "../utils/mutations";
 import ThemeOne from "./assets/theme01.jpg"
 import ThemeTwo from "./assets/theme02.jpg"
 import ThemeThree from './assets/theme03.jpg';
 import ThemeFour from "./assets/theme04.jpg"
 
 function PartyForm({partyTheme}) {
-    console.log("in party form theme clicked:", partyTheme)
+
+    const [addParty, { error }] = useMutation(ADD_PARTY);
+    
+
     const [partyFormState, setPartyFormState] = useState({ 
         hostName: '', 
         description: '',
@@ -31,14 +35,23 @@ function PartyForm({partyTheme}) {
     const handleChange = (event) => {
         setPartyFormState({ ...partyFormState, [event.target.name]: event.target.value });
           };
-    const handlePartyFormSubmit = (e) => {
+    const handlePartyFormSubmit = async (e) => {
         e.preventDefault();
         console.log(partyFormState);
+        let partyId;
+        try {
+            const { data }= await addParty({
+              variables: { ...partyFormState },
+            });
+            partyId = data.addParty._id
+          } catch (e) {
+            console.error(e)
+            console.log(error);
+          }
+  
         setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
-        // await party creation 
-        // use id in params
-        // going to redirect to view invitation and invite guests
-        //myparty with party id
+        window.location.assign(`/myparty/${partyId}`)
+        
     }
     return (
         <div className='background-container'>
