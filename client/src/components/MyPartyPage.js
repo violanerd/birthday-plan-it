@@ -1,4 +1,7 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_PARTY } from '../utils/queries';
 
 import './MyPartyPageStyles.css';
 // import ThemeOne from "./assets/theme01.jpg";
@@ -7,11 +10,23 @@ import ThemeThree from './assets/theme03.jpg';
 // import ThemeFour from "./assets/theme04.jpg";
 
 const MyPartyPage = () => {
-  
+  const { id: partyId } = useParams();
+  console.log(partyId);
+
+  const {loading, data} = useQuery(QUERY_PARTY, {
+    variables: {id: partyId}
+  })
+
+  const party = data?.party || {}
+  if (loading) {
+    return <div>Loading...</div>
+  }
+  console.log("party details", party)
   return (
     <div className='emailer-container'>
       <div className='left-container'>
         <img className='theme-three' src={ThemeThree} alt='dance-party-theme' />
+        <p style={{color: "black"}}>{party.hostName} is the host of this party</p>
       </div>
       <div className='right-container'>
         <div className='content-container'>

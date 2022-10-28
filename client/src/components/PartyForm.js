@@ -50,11 +50,8 @@ function PartyForm({partyTheme}) {
           }
   
         setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
-        // await party creation 
         window.location.assign(`/myparty/${partyId}`)
-        // use id in params
-        // going to redirect to view invitation and invite guests
-        //myparty with party id
+        
     }
     return (
         <div className='background-container'>
