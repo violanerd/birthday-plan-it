@@ -11,7 +11,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import Theme from './routes/Theme';
-import Email from './routes/Email';
 import { setContext } from '@apollo/client/link/context';
 import { Route, Routes } from 'react-router-dom';
 
@@ -44,7 +43,6 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/theme' element={<Theme />} />
-        <Route path='/email' element={<Email />} />
       </Routes>
     </>
     </ApolloProvider>

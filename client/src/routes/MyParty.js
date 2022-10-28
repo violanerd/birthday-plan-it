@@ -1,17 +1,19 @@
 import React from "react";
-import EmailButton from "../components/EmailButton";
+// import EmailButton from "../components/EmailButton";
 import Navbar from "../components/Navbar";
+import MyPartyPage from '../components/MyPartyPage';
 import Footer from "../components/Footer";
 
 const MyParty = () => {
   return (
     <div>
       <Navbar />
-      <Footer />
-      <div>
+      <MyPartyPage />
+      {/* <div>
         MyParty
         <EmailButton />
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };
