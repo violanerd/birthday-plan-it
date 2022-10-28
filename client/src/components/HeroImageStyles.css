@@ -36,7 +36,6 @@
   height: auto;
   background-size: cover;
   background-position: center;
-  /* object-fit: cover; */
   opacity: 25%;
   position: absolute;
   top: 0;
@@ -46,13 +45,8 @@
 .hero .content {
   margin-top: 60px;
   position: relative;
-  /* margin-top: -65px; */
   width: 70%;
   max-width: 900px;
-  /* position: absolute; */
-  /* transform: translate(-50%, -50%); */
-  /* top: 100%; */
-  /* left: 50%; */
   z-index: 2;
 }
 
@@ -171,13 +165,6 @@ span {
 }
 
 @media screen and (max-width: 568px) {
-  /* .hero {
-    height: 3450px;
-  }
-  .hero .content {
-    top: 1870px;
-  } */
-
   .image-container {
     background-size: 100%;
   }

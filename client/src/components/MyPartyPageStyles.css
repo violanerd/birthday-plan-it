@@ -8,7 +8,6 @@ body {
 }
 
 .emailer-container {
-  /* background-color: black; */
   display: flex;
   margin-top: 60px;
   margin-bottom: 50px;
@@ -26,7 +25,6 @@ body {
 
 .right-container {
   width: 25%;
-  /* background-color: var(--header-red); */
   margin: 0 25px;
   padding: 35px;
 }
@@ -41,4 +39,3 @@ body {
   justify-content: left;
   text-align: left;
 }
-
