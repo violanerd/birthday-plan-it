@@ -50,7 +50,7 @@ function Login({ handleModals }) {
             <input
               type="email"
               name="email"
-              // placeholder="Your Email"
+
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
@@ -64,7 +64,7 @@ function Login({ handleModals }) {
             <input
               type="password"
               name="password"
-              // placeholder="********"
+
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}

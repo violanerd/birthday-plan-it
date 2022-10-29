@@ -1,6 +1,7 @@
 import React from "react";
-import EmailButton from "../components/EmailButton";
+// import EmailButton from "../components/EmailButton";
 import Navbar from "../components/Navbar";
+import MyPartyPage from '../components/MyPartyPage';
 import Footer from "../components/Footer";
 import MyPartyPage from '../components/MyPartyPage';
 
