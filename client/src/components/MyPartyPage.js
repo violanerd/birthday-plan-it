@@ -15,6 +15,7 @@ import backgroundOne from "./assets/theme-1-background.png";
 import backgroundTwo from "./assets/theme-2-background.png";
 import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
+import { dateFormat, parseTime } from "../utils/date";
 
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
@@ -94,23 +95,34 @@ const MyPartyPage = () => {
       document.body.style.backgroundImage = `url(${backgroundOne})`;
     }
   }, [party.theme]);
-
+  
   if (loading) {
     return <div>Loading...</div>;
   }
   console.log("party details", party);
-
+  let date = dateFormat(party.date)
+  let time = parseTime(party.time)
   return (
     <div className="emailer-container">
       <div className="left-container">
-        <img
-          className="theme-three"
-          src={renderPartyTheme}
-          alt="dance-party-theme"
-        />
-        <p style={{ color: "black" }}>
-          {party.hostName} is the host of this party
-        </p>
+        <div className='invitation'>
+          <img className='theme-three' src={renderPartyTheme} alt='dance-party-theme' />
+          <div className='invitation-fields'>
+              <div className='you-r-invited'>YOU'RE INVITED!</div>
+              <div className='data-area'>{party.hostName}</div>
+              <p className='label label-p' > would like to invite you to their birthday party!</p>
+              <div className='label'>The party will be held at</div>
+              <div className="location data-area data-text">{party.location}</div>
+              <div className='label'>The date of the party will be</div>
+              <div className='date-time'>
+                <div className='date data-area data-text'>{date}</div>
+              </div>
+              <div className='label'>The party will start at</div>
+              <div className='date-time'>
+                <div className='time data-area data-text'>{time}</div>
+              </div>
+          </div>
+        </div>
       </div>
       <div className="right-container">
         <div className="content-container">
@@ -149,7 +161,7 @@ const MyPartyPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="messages-container">
+              <div className="messages-container">Write a message to guests
                 <textarea
                   className="host-message"
                   placeholder="Message to guests here..."

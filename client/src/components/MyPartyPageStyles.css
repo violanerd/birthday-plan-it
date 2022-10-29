@@ -17,8 +17,8 @@ body {
 }
 
 .left-container {
-  background-color: var(--white);
-  padding: 15px;
+  /* background-color: var(--white);
+  padding: 15px; took these out because then it had double backgrounds*/
   border-radius: 8px;
   margin: 0 25px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
@@ -39,4 +39,56 @@ body {
 .email-form {
   justify-content: left;
   text-align: left;
+}
+/* edits to render the invitation */
+.invitation {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.invitation-fields {
+  margin-top: 2rem; /* this is what I added to get it to scoot down*/
+  top: 125px;
+  left: 125px;
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  width: 275px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.data-area {
+  border-style: none;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+  padding: 6px 5px;
+  font-size: 36px;
+  background-color: transparent;
+  color: var(--drk-vibrant-purple);
+  font-weight: 700;
+  outline-color: var(--pale-purple);
+}
+.data-text {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+.date, .time, .location {
+  margin-bottom: 12px;
+  padding: 2px;
+}
+.date-time {
+  width: 100%;
 }
