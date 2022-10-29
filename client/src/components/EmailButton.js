@@ -14,7 +14,7 @@ function EmailButton () {
 
     return (
         <div>
-            <button onClick={() => sendEmail({ variables: {id : "6358902ec795de37cb8bdc9e" }})}>Email my invite!</button>
+            <button onClick={() => sendEmail({ variables: {id : "" }})}>Email my invite!</button>
         </div>
     )
 }
