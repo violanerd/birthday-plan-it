@@ -64,7 +64,7 @@ img {
 }
 
 @media screen and (max-width: 980px) {
-.nav-menu {
+  .nav-menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,7 @@ img {
   .nav-menu .login-btn {
     margin: 0;
     border: none;
-    padding: 1rem 0
+    padding: 1rem 0;
   }
 
   .nav-menu .login-btn:hover {
@@ -103,5 +103,13 @@ img {
 
   .hamburger {
     display: initial;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .logo-section img {
+    position: relative;
+    margin: 0;
+    width: 220px;
   }
 }
