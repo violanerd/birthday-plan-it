@@ -13,6 +13,7 @@ const typeDefs = gql`
     hostName: String
     description: String
     guests: [String]
+    rsvps: [String]
     date: String
     location: String
     time: String
@@ -46,6 +47,8 @@ const typeDefs = gql`
       time: String
     ): Party
     inviteGuest(partyId: ID!, email: String!): Party
+    rsvpToParty(partyId: ID!): Party
+    addDescription(partyId: ID!, description: String!): Party
   }
 `;
 
