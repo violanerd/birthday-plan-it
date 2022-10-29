@@ -92,3 +92,10 @@ body {
 .date-time {
   width: 100%;
 }
+.host-message {
+  color: white;
+}
+textarea.host-message.data-area {
+  border-radius: 8px;
+  border: 2px solid var(--white);
+}

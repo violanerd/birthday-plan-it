@@ -32,8 +32,9 @@ const resolvers = {
       return Party.findOne({ _id });
     },
     emailGuests: async (parent, { _id }) => {
+      console.log("made it to the back end")
       const guests = await Party.findOne({ _id });
-      const response = await sendEmail(guests.guests);
+      const response = await sendEmail(guests.guests, _id);
       console.log(response);
       return guests;
     },

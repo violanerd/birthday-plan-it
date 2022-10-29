@@ -12,13 +12,13 @@ var transport = nodemailer.createTransport({
   });
 
 
-async function sendEmail(maillist) {
+async function sendEmail(maillist, id) {
   const mailOptions = {
     from: 'birthdayplanit@yahoo.com', // Sender address
     to: maillist, // List of recipients
-    subject: 'Test Test', // Subject line
-    text: 'Testing', // Plain text body
-    html: "<h1>Look at my invite</h1><p>Invite link</p>",
+    subject: "You've been invited!", // Subject line
+    //text: 'Testing', // Plain text body
+    html: `<h1>RSVP to your invitation here:</h1><a href='http://localhost:3000/rsvp/${id}' target='_blank'>RSVP link</p>`,
     // attachments: [
     //     {
     //         filename: "greenmountains.jpg",
@@ -26,6 +26,7 @@ async function sendEmail(maillist) {
     //     }
     // ]
     };
+    console.log(mailOptions.html)
     try {
       let info = await transport.sendMail(mailOptions) 
       return info.messageId

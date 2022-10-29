@@ -1,11 +1,10 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { QUERY_PARTY } from "../utils/queries";
+import { useQuery, useLazyQuery } from "@apollo/client";
+import { QUERY_PARTY, EMAIL_GUESTS } from "../utils/queries";
 import { ADD_GUEST, ADD_DESCRIPTION } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
-
 import "./MyPartyPageStyles.css";
 import ThemeOne from "./assets/theme01.jpg";
 import ThemeTwo from "./assets/theme02.jpg";
@@ -16,6 +15,7 @@ import backgroundTwo from "./assets/theme-2-background.png";
 import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
 import { dateFormat, parseTime } from "../utils/date";
+
 
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
@@ -77,7 +77,13 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-
+  const [sendEmail, {data: emailData}] = useLazyQuery(EMAIL_GUESTS)
+  useEffect(() => {
+      if (emailData) {
+          console.log(emailData)
+        alert("emails sent successfully!")
+      }
+    }, [emailData]);
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 
   useEffect(() => {
@@ -126,8 +132,21 @@ const MyPartyPage = () => {
       </div>
       <div className="right-container">
         <div className="content-container">
-          <h1 className="guestlist-heading">Create your guest list:</h1>
+          <h1 className="guestlist-heading">Write a message to guests:</h1>
+          <div className="messages-container">
+                <textarea
+                  className="host-message data-area"
+                  placeholder="Message to guests here..."
+                  rows="2"
+                  maxLength="500"
+                  name="description"
+                  value={descState.description}
+                  onChange={handleDescUpdate}
+
+                ></textarea>
+          </div>
           <div className="email-form">
+          <h1 className="guestlist-heading">Create your guest list:</h1>
             <form onSubmit={handleFormSubmit}>
               <label htmlFor="email">Email address:</label>
               <input
@@ -161,20 +180,11 @@ const MyPartyPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="messages-container">Write a message to guests
-                <textarea
-                  className="host-message"
-                  placeholder="Message to guests here..."
-                  rows="2"
-                  maxLength="500"
-                  name="description"
-                  value={descState.description}
-                  onChange={handleDescUpdate}
-
-                ></textarea>
-              </div>
             </form>
           </div>
+          <div>
+            <button onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+        </div>
         </div>
       </div>
     </div>
