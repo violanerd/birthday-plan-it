@@ -85,9 +85,44 @@ const resolvers = {
     // invite additional guests after the party is created
     inviteGuest: async (parent, args, context) => {
       if (context.user) {
+        const party = await Party.findByIdAndUpdate(
+          { _id: args.partyId },
+          { $push: { guests: args.email } },
+          { new: true, runValidators: true }
+        );
+
+        return party;
       }
+      throw new AuthenticationError("You need to be logged in!");
     },
-    rsvpToParty: async (parent, args, context) => {},
+    rsvpToParty: async (parent, args, context) => {
+      if (context.user) {
+        const party = await Party.findById({ _id: args.partyId });
+        if (party.guests.includes(context.user.email)) {
+          const rsvp = await Party.findByIdAndUpdate(
+            { _id: party._id },
+            { $push: { rsvps: context.user.email } },
+            { new: true, runValidators: true }
+          );
+          return rsvp;
+        }
+
+        throw new AuthenticationError("You weren't invited!");
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    addDescription: async (parent, args, context) => {
+      if (context.user) {
+        const party = await Party.findByIdAndUpdate(
+          { _id: args.partyId },
+          { description: args.description },
+          { new: true }
+        );
+
+        return party;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

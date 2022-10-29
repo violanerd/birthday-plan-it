@@ -1,5 +1,10 @@
 const { Schema, model } = require("mongoose");
 
+function validateEmail(email) {
+  const reg = /.+@.+\..+/;
+  return reg.test(email);
+}
+
 const partySchema = new Schema(
   {
     hostName: {
@@ -12,13 +17,17 @@ const partySchema = new Schema(
     guests: [
       {
         type: String,
+        validate: [validateEmail, "Must match an email address!"],
         match: [/.+@.+\..+/, "Must match an email address!"],
+        unique: true,
       },
     ],
     rsvps: [
       {
         type: String,
+        validate: [validateEmail, "Must match an email address!"],
         match: [/.+@.+\..+/, "Must match an email address!"],
+        unique: true,
       },
     ],
     date: {
@@ -47,6 +56,10 @@ const partySchema = new Schema(
     },
   }
 );
+
+partySchema.virtual("rsvpCount").get(function () {
+  return this.rsvps.length;
+});
 
 const Party = model("Party", partySchema);
 

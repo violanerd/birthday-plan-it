@@ -48,6 +48,7 @@ const typeDefs = gql`
     ): Party
     inviteGuest(partyId: ID!, email: String!): Party
     rsvpToParty(partyId: ID!): Party
+    addDescription(partyId: ID!, description: String!): Party
   }
 `;
 
