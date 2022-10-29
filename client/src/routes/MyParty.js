@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import MyPartyPage from '../components/MyPartyPage';
 import Footer from "../components/Footer";
-import MyPartyPage from '../components/MyPartyPage';
 
 const MyParty = () => {
   return (

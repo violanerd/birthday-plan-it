@@ -178,7 +178,6 @@
   color: var(--lt-purple);
   background-color: transparent;
   margin-left: 7px;
-
   cursor: pointer;
   transition: 0.3s;
 }
@@ -188,7 +187,7 @@
   border: 3px solid var(--header-red);
   background-color: var(--header-red);
   color: var(--white);
-
+}
 .login-button:hover, .sign-up-btn:hover {
   background-color: var(--lt-purple);
   color: rgba(255, 255, 255, 0.7);
