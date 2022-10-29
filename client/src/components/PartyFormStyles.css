@@ -41,7 +41,7 @@ body {
 }
 
 .input-fields {
-  top: 125px;
+  top: 145px;
   left: 125px;
   z-index: 2;
   position: absolute;
@@ -69,7 +69,7 @@ form textarea {
   width: 100%;
   display: block;
   margin-bottom: 5px;
-  padding: 6px 5px;
+  padding: 2px 5px;
   font-size: 36px;
   background-color: transparent;
   border: 2px solid var(--white);
@@ -90,14 +90,24 @@ input::placeholder {
 }
 
 .label-p {
-  padding: 0 0 12px 0;
+  top: -11px;
+  position: relative;
+  padding: 0 0 6px 0;
   font-weight: 700;
   color: var(--drk-vibrant-purple);
 }
 
 .date, .time, .location {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   padding: 2px;
+}
+
+.location {
+  line-height: 1.4rem;
+}
+
+.date {
+  line-height: 1.8rem;
 }
 
 .location {

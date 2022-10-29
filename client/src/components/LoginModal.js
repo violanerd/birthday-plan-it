@@ -64,7 +64,6 @@ function Login({ handleModals }) {
             <input
               type="password"
               name="password"
-
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}
