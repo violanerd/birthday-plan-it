@@ -1,11 +1,10 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { QUERY_PARTY } from "../utils/queries";
+import { useQuery, useLazyQuery } from "@apollo/client";
+import { QUERY_PARTY, EMAIL_GUESTS } from "../utils/queries";
 import { ADD_GUEST, ADD_DESCRIPTION } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
-
 import "./MyPartyPageStyles.css";
 import ThemeOne from "./assets/theme01.jpg";
 import ThemeTwo from "./assets/theme02.jpg";
@@ -15,6 +14,8 @@ import backgroundOne from "./assets/theme-1-background.png";
 import backgroundTwo from "./assets/theme-2-background.png";
 import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
+import { dateFormat, parseTime } from "../utils/date";
+
 
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
@@ -76,7 +77,13 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-
+  const [sendEmail, {data: emailData}] = useLazyQuery(EMAIL_GUESTS)
+  useEffect(() => {
+      if (emailData) {
+          console.log(emailData)
+        alert("emails sent successfully!")
+      }
+    }, [emailData]);
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 
   useEffect(() => {
@@ -94,28 +101,52 @@ const MyPartyPage = () => {
       document.body.style.backgroundImage = `url(${backgroundOne})`;
     }
   }, [party.theme]);
-
+  
   if (loading) {
     return <div>Loading...</div>;
   }
   console.log("party details", party);
-
+  let date = dateFormat(party.date)
+  let time = parseTime(party.time)
   return (
     <div className="emailer-container">
       <div className="left-container">
-        <img
-          className="theme-three"
-          src={renderPartyTheme}
-          alt="dance-party-theme"
-        />
-        <p style={{ color: "black" }}>
-          {party.hostName} is the host of this party
-        </p>
+        <div className='invitation'>
+          <img className='theme-three' src={renderPartyTheme} alt='dance-party-theme' />
+          <div className='invitation-fields'>
+              <div className='you-r-invited'>YOU'RE INVITED!</div>
+              <div className='data-area'>{party.hostName}</div>
+              <p className='label label-p' > would like to invite you to their birthday party!</p>
+              <div className='label'>The party will be held at</div>
+              <div className="location data-area data-text">{party.location}</div>
+              <div className='label'>The date of the party will be</div>
+              <div className='date-time'>
+                <div className='date data-area data-text'>{date}</div>
+              </div>
+              <div className='label'>The party will start at</div>
+              <div className='date-time'>
+                <div className='time data-area data-text'>{time}</div>
+              </div>
+          </div>
+        </div>
       </div>
       <div className="right-container">
         <div className="content-container">
-          <h1 className="guestlist-heading">Create your guest list:</h1>
+          <h1 className="guestlist-heading">Write a message to guests:</h1>
+          <div className="messages-container">
+                <textarea
+                  className="host-message data-area"
+                  placeholder="Message to guests here..."
+                  rows="2"
+                  maxLength="500"
+                  name="description"
+                  value={descState.description}
+                  onChange={handleDescUpdate}
+
+                ></textarea>
+          </div>
           <div className="email-form">
+          <h1 className="guestlist-heading">Create your guest list:</h1>
             <form onSubmit={handleFormSubmit}>
               <label htmlFor="email">Email address:</label>
               <input
@@ -137,7 +168,7 @@ const MyPartyPage = () => {
             )}
             <form>
               <div className="invite-guests-container">
-                <h1 className="guest-list-heading">Guest list:</h1>
+                {/* <h1 className="guest-list-heading">Guest list:</h1> */}
                 <div className="guests-list">
                   <p>Here is the list of guests you have invited:</p>
                   <ul>
@@ -149,20 +180,11 @@ const MyPartyPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="messages-container">
-                <textarea
-                  className="host-message"
-                  placeholder="Message to guests here..."
-                  rows="2"
-                  maxLength="500"
-                  name="description"
-                  value={descState.description}
-                  onChange={handleDescUpdate}
-
-                ></textarea>
-              </div>
             </form>
           </div>
+          <div>
+            <button onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+        </div>
         </div>
       </div>
     </div>
