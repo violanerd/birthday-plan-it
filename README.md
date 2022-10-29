@@ -66,9 +66,9 @@ an email list containing your guests emails that you want the invitation sent to
 
 ## **Start:**
 
-### _To start, use this command in the the terminal => then use http://localhost:3001/ in the browser:_
+### _To start, use this command in the the terminal then use http://localhost:3001/ in the browser:_
 
-`npm start`
+`npm run develop`
 
 <br>
 
