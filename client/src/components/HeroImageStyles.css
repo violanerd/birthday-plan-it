@@ -203,12 +203,6 @@ span {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .select-btn {
-    font-size: .7rem;
-  }
-}
-
 @media screen and (max-width: 568px) {
   .image-container {
     background-size: 100%;
