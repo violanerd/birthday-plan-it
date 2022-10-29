@@ -38,6 +38,14 @@ an email list containing your guests emails that you want the invitation sent to
 
 <br>
 
+## **Media Query Breakpoints:**
+- 1200px
+- 992px
+- 768px
+- 500px
+
+<br>
+
 ## **This Full-stack App Was Created Using:**
 
 ### **The MERN Stack**
