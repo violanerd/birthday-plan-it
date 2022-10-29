@@ -59,14 +59,16 @@ const MyPartyPage = () => {
     }
   };
 
-  const handleDescUpdate = async (event) => {
+  const handleDescForm = async (event) => {
     const { name, value } = event.target;
 
     setDescState({
       ...descState,
       [name]: value,
     });
+  };
 
+  const updateDesc = async (event) => {
     try {
       await addDescription({
         variables: { ...descState, partyId: party._id },
@@ -156,7 +158,8 @@ const MyPartyPage = () => {
                   maxLength="500"
                   name="description"
                   value={descState.description}
-                  onChange={handleDescUpdate}
+                  onChange={handleDescForm}
+                  onBlur={updateDesc}
                 ></textarea>
               </div>
             </form>
