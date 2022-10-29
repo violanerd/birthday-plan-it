@@ -92,7 +92,7 @@ body {
 .date-time {
   width: 100%;
 }
-.host-message {
+.host-message, .guest-name {
   color: white;
 }
 textarea.host-message.data-area {

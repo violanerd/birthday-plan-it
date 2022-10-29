@@ -168,7 +168,7 @@ const MyPartyPage = () => {
             )}
             <form>
               <div className="invite-guests-container">
-                <h1 className="guest-list-heading">Guest list:</h1>
+                {/* <h1 className="guest-list-heading">Guest list:</h1> */}
                 <div className="guests-list">
                   <p>Here is the list of guests you have invited:</p>
                   <ul>
