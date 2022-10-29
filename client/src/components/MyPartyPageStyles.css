@@ -1,43 +1,42 @@
 body {
-    background-color: var(--darkest-purple);
-    /* background-image: url("./assets/theme-3-background.png"); set in myparty page*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-  }
-  
-  .emailer-container {
-    /* background-color: black; */
-    display: flex;
-    margin-top: 150px;
-    margin-bottom: 50px;
-    justify-content: center;
-    text-align: left;
-  }
-  
-  .left-container {
-    background-color: var(--white);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 0 25px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-  }
-  
-  .right-container {
-    width: 25%;
-    /* background-color: var(--header-red); */
-    margin: 0 25px;
-    padding: 35px;
-  }
-  
-  .right-container .guestlist-heading {
-    color: var(--white);
-    font-size: 1.7rem;
-    padding-bottom: 15px;
-  }
-  
-  .email-form {
-    justify-content: left;
-    text-align: left;
-  }
+
+  background-color: var(--darkest-purple);
+  background-image: url("./assets/theme-3-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.emailer-container {
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  justify-content: center;
+  text-align: left;
+}
+
+.left-container {
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 0 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.right-container {
+  width: 25%;
+  margin: 0 25px;
+  padding: 35px;
+}
+
+.right-container .guestlist-heading {
+  color: var(--white);
+  font-size: 1.7rem;
+  padding-bottom: 15px;
+}
+
+.email-form {
+  justify-content: left;
+  text-align: left;
+}

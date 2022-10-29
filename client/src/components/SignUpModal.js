@@ -44,6 +44,7 @@ function SignUp({ handleModals }) {
         <h3 className="modalTitle">Sign Up!</h3>
 
         <form onSubmit={handleFormSubmit} className="email-password-container">
+
         <div className="username-field">
           <label htmlFor="username" className="username-label">Username:</label>
           <input
@@ -54,6 +55,7 @@ function SignUp({ handleModals }) {
             value={formState.username}
             onChange={handleChange}
           />
+
           </div>
           <div className="email-field">
             <label htmlFor="email" className="email-label">
@@ -62,13 +64,13 @@ function SignUp({ handleModals }) {
             <input
               type="email"
               name="email"
-              // placeholder="Your Email"
+
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
             />
           </div>
-
+          {/* ================================ */}
           <div className="password-field">
             <label htmlFor="password" className="password-label">
               Password:
@@ -76,7 +78,7 @@ function SignUp({ handleModals }) {
             <input
               type="password"
               name="password"
-              // placeholder="********"
+
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}

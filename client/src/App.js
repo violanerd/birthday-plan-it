@@ -10,7 +10,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import Theme from './routes/Theme'
+import Theme from './routes/Theme';
 import { setContext } from '@apollo/client/link/context';
 import { Route, Routes } from 'react-router-dom';
 
