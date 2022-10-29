@@ -45,15 +45,15 @@ query User($username: String) {
   }
 }`
 export const QUERY_PARTIES = gql`
-query Parties($host: String) {
-  parties(host: $host) {
+query Parties($hostName: String) {
+  parties(hostName: $hostName) {
     _id
-    name
+    hostName
     description
     guests
-    host
     date
     location
+    time
     theme
   }
 }`
@@ -61,12 +61,12 @@ export const QUERY_PARTY = gql`
 query Party($id: ID!) {
   party(_id: $id) {
     _id
-    name
+    hostName
     description
-    host
     guests
     date
     location
+    time
     theme
   }
 }`

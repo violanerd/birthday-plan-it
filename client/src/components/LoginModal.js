@@ -50,6 +50,7 @@ function Login({ handleModals }) {
             <input
               type="email"
               name="email"
+
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
@@ -63,6 +64,7 @@ function Login({ handleModals }) {
             <input
               type="password"
               name="password"
+
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}
@@ -72,7 +74,7 @@ function Login({ handleModals }) {
           <button type="submit" className="log-in-btn">Login!</button>
         </form>
 
-        {error && <div>Login failed</div>}
+        {error && <div style={{color: "black"}}>Login failed</div>}
 
         <div className="flex-row">
           <button

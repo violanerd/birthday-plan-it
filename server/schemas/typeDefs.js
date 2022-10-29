@@ -10,12 +10,13 @@ const typeDefs = gql`
 
   type Party {
     _id: ID
-    name: String
+    hostName: String
     description: String
-    host: String
     guests: [String]
+    rsvps: [String]
     date: String
     location: String
+    time: String
     theme: Int
   }
 
@@ -28,7 +29,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String): User
-    parties(host: String): [Party]
+    parties(hostName: String): [Party]
     party(_id: ID!): Party
     emailGuests(_id: ID!): Party
   }
@@ -37,14 +38,17 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addParty(
-      name: String!
+      hostName: String!
       description: String
       date: String
       location: String
       theme: Int!
       guests: [String]
+      time: String
     ): Party
     inviteGuest(partyId: ID!, email: String!): Party
+    rsvpToParty(partyId: ID!): Party
+    addDescription(partyId: ID!, description: String!): Party
   }
 `;
 

@@ -39,7 +39,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/myparty' element={<MyParty />} />
+        <Route path='/myparty/:id' element={<MyParty />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/theme' element={<Theme />} />

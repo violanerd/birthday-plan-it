@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
-
 import './PartyFormStyles.css';
-import ThemeOne from "./assets/theme01.jpg"
-import ThemeTwo from "./assets/theme02.jpg"
+import { useMutation } from "@apollo/client";
+import { ADD_PARTY } from "../utils/mutations";
+import ThemeOne from "./assets/theme01.jpg";
+import ThemeTwo from "./assets/theme02.jpg";
 import ThemeThree from './assets/theme03.jpg';
-import ThemeFour from "./assets/theme04.jpg"
+import ThemeFour from "./assets/theme04.jpg";
+import backgroundOne from "./assets/theme-1-background.png"
+import backgroundTwo from "./assets/theme-2-background.png"
+import backgroundThree from "./assets/theme-3-background.png"
+import backgroundFour from "./assets/theme-4-background.png"
 
 function PartyForm({partyTheme}) {
-    console.log("in party form theme clicked:", partyTheme)
+
+    const [addParty, { error }] = useMutation(ADD_PARTY);
+    
+
     const [partyFormState, setPartyFormState] = useState({ 
         hostName: '', 
         description: '',
@@ -19,23 +27,42 @@ function PartyForm({partyTheme}) {
     
     const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne)
     useEffect(()=> {
+       
         if (partyTheme === 2){
+            document.body.style.backgroundImage = `url(${backgroundTwo})`
             setRenderPartyTheme(ThemeTwo)
         } else if (partyTheme === 3){
+            document.body.style.backgroundImage = `url(${backgroundThree})`
             setRenderPartyTheme(ThemeThree)
         } else if (partyTheme === 4){
+            document.body.style.backgroundImage = `url(${backgroundFour})`
             setRenderPartyTheme(ThemeFour)
-        } else
-        setRenderPartyTheme(ThemeOne)
-    }, [partyTheme]) 
+        } else {
+            setRenderPartyTheme(ThemeOne)
+            document.body.style.backgroundImage = `url(${backgroundOne})`
+        }
+        }, [partyTheme]) 
+
     const handleChange = (event) => {
         setPartyFormState({ ...partyFormState, [event.target.name]: event.target.value });
           };
-    const handlePartyFormSubmit = (e) => {
+    const handlePartyFormSubmit = async (e) => {
         e.preventDefault();
         console.log(partyFormState);
+        let partyId;
+        try {
+            const { data }= await addParty({
+              variables: { ...partyFormState },
+            });
+            partyId = data.addParty._id
+          } catch (e) {
+            console.error(e)
+            console.log(error);
+          }
+  
         setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
-        // going to redirect to view invitation and invite guests
+        window.location.assign(`/myparty/${partyId}`)
+        
     }
     return (
         <div className='background-container'>

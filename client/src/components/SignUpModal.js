@@ -44,17 +44,18 @@ function SignUp({ handleModals }) {
         <h3 className="modalTitle">Sign Up!</h3>
 
         <form onSubmit={handleFormSubmit} className="email-password-container">
-          {/* ================================ */}
-          <div className="username-field">
-            <label htmlFor="username" className="username-label">Username:</label>
-            <input
-              type="text"
-              name="username"
-              className="email-password-input"
-              value={formState.username}
-              onChange={handleChange}
-            />
-            {/* ================================ */}
+
+        <div className="username-field">
+          <label htmlFor="username" className="username-label">Username:</label>
+          <input
+            type="text"
+            name="username"
+            // placeholder="Your Username"
+            className="email-password-input"
+            value={formState.username}
+            onChange={handleChange}
+          />
+
           </div>
           <div className="email-field">
             <label htmlFor="email" className="email-label">
@@ -63,6 +64,7 @@ function SignUp({ handleModals }) {
             <input
               type="email"
               name="email"
+
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
@@ -76,17 +78,18 @@ function SignUp({ handleModals }) {
             <input
               type="password"
               name="password"
+
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}
             />
           </div>
-          {/* ================================ */}
+
           <button type="submit"
             className="signup-button">Sign Up!</button>
         </form>
 
-        {error && <div>Sign Up Failed</div>}
+        {error && <div style={{color: "black"}}>Sign Up Failed</div>}
 
         <div className="flex-row">
           <button
