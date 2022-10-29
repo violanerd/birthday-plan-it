@@ -5,9 +5,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./assets/birthday-plan-it-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Auth from "../utils/auth";
 
 const Navbar = () => {
   // ACTIVATE SLIDE IN MENU BY 'click' STATE
+  function logout(event) {
+    event.preventDefault();
+    Auth.logout();
+  }
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -41,12 +46,22 @@ const Navbar = () => {
         <li>
           <Link to="/myparty">My Party</Link>
         </li>
-        <li>
-          <Link onClick={() => handleModals("signup")}> Sign Up</Link>
-        </li>
-        <li className="login-btn">
-          <Link onClick={() => handleModals("login")}>Login</Link>
-        </li>
+        {Auth.loggedIn() ? (
+          <>
+            <li className="login-btn">
+              <Link onClick={logout}>Logout</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link onClick={() => handleModals("signup")}> Sign Up</Link>
+            </li>
+            <li className="login-btn">
+              <Link onClick={() => handleModals("login")}>Login</Link>
+            </li>
+          </>
+        )}
       </ul>
       {/* HAMBURGER MENU CONDITIONALS */}
       <div className="hamburger" onClick={handleClick}>
