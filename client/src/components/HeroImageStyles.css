@@ -206,6 +206,7 @@ span {
 @media screen and (max-width: 568px) {
   .image-container {
     background-size: 100%;
+    opacity: 35%;
   }
 
   .hero .content h1 {
