@@ -9,10 +9,6 @@ const Rsvp = () => {
     <div>
       <Navbar />
       <RsvpPage />
-      {/* <div>
-        MyParty
-        <EmailButton />
-      </div> */}
       <Footer />
     </div>
   );

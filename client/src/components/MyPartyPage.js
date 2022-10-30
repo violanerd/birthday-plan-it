@@ -135,7 +135,7 @@ const MyPartyPage = () => {
       </div>
       <div className="right-container center">
         {/* <div className="content-container"> */}
-          <h1 className="guestlist-heading">Write a message to guests:</h1>
+          <h1 className="guestlist-heading">Write a message to your guests:</h1>
           <div className="messages-container">
                 <textarea
                   className="host-message data-area"
