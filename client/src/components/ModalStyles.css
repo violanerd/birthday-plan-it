@@ -45,7 +45,9 @@
   text-align: center;
 }
 
-.username-field, .email-field, .password-field {
+.username-field,
+.email-field,
+.password-field {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 15px;
@@ -79,7 +81,10 @@
   margin: 15px 0;
 }
 
-.username-field, .email-field, .password-field, input {
+.username-field,
+.email-field,
+.password-field,
+input {
   font-size: 12px;
   width: 275px;
   margin: 0 auto;
@@ -90,7 +95,7 @@
   text-align: center;
   justify-content: center;
   padding: 6px 71px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);
@@ -112,7 +117,7 @@
   text-align: center;
   justify-content: center;
   padding: 6px 76px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);
@@ -132,7 +137,7 @@
 .sign-up-btn {
   padding: 6px 18px;
   border-radius: 25px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);
@@ -151,7 +156,7 @@
 .login-button {
   padding: 6px 24px;
   border-radius: 25px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);
@@ -163,7 +168,8 @@
   transition: 0.3s;
 }
 
-.login-button:hover, .sign-up-btn:hover {
+.login-button:hover,
+.sign-up-btn:hover {
   background-color: var(--lt-purple);
   color: rgba(255, 255, 255, 0.7);
 }
@@ -171,7 +177,7 @@
 .close-button {
   padding: 6px 24px;
   border-radius: 25px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);
@@ -183,22 +189,22 @@
   transition: 0.3s;
 }
 
-
 .close-button:hover {
   border: 3px solid var(--header-red);
   background-color: var(--header-red);
   color: var(--white);
+}
 
-.login-button:hover, .sign-up-btn:hover {
+.login-button:hover,
+.sign-up-btn:hover {
   background-color: var(--lt-purple);
   color: rgba(255, 255, 255, 0.7);
-
 }
 
 .close-button {
   padding: 6px 24px;
   border-radius: 25px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   border: 3px solid var(--lt-purple);

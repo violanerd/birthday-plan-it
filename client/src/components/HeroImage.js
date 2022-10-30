@@ -9,6 +9,7 @@ import ThemeTwoThumbnail from "./assets/theme02-thumbnail.jpg";
 import ThemeThreeThumbnail from "./assets/theme03-thumbnail.jpg";
 import ThemeFourThumbnail from "./assets/theme04-thumbnail.jpg";
 import { Link } from "react-router-dom";
+import Auth from "../utils/auth";
 
 const HeroImage = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
@@ -25,6 +26,9 @@ const HeroImage = () => {
     }
   }
 
+  function loginAndCreate() {
+    return;
+  }
 
   return (
     <div className="hero">
@@ -48,14 +52,7 @@ const HeroImage = () => {
           containing your guests emails that you want the invitation sent to. So
           let's get the party started!
         </p>
-        <div className="buttons-container">
-          <Link onClick={() => handleModals("signup")} className="signup-btn">
-            Sign Up
-          </Link>
-          <Link onClick={() => handleModals("login")} className="login-btn">
-            Login
-          </Link>
-        </div>
+
         <div className="theme-heading">
           <h2 className="theme-h2">Your choice of four themes!</h2>
           <p className="theme-subhead" id="subhead">
@@ -70,7 +67,7 @@ const HeroImage = () => {
               alt="balloon-theme"
             />
             <h3 className="theme-name">Festive Balloons</h3>
-            <Link to="/theme" className="select-btn" state={{partyTheme: 1}}>
+            <Link to="/theme" className="select-btn" state={{ partyTheme: 1 }}>
               Create Invite
             </Link>
           </div>
@@ -81,7 +78,7 @@ const HeroImage = () => {
               alt="space-theme"
             />
             <h3 className="theme-name">Outer Space</h3>
-            <Link to="/theme" className="select-btn" state={{partyTheme: 2}}>
+            <Link to="/theme" className="select-btn" state={{ partyTheme: 2 }}>
               Create Invite
             </Link>
           </div>
@@ -92,7 +89,7 @@ const HeroImage = () => {
               alt="dance-theme"
             />
             <h3 className="theme-name">Dance Party</h3>
-            <Link to="/theme" className="select-btn" state={{partyTheme: 3}}>
+            <Link to="/theme" className="select-btn" state={{ partyTheme: 3 }}>
               Create Invite
             </Link>
           </div>
@@ -103,7 +100,7 @@ const HeroImage = () => {
               alt="beat-box-theme"
             />
             <h3 className="theme-name">Beat Box</h3>
-            <Link to="/theme" className="select-btn" state={{partyTheme: 4}}>
+            <Link to="/theme" className="select-btn" state={{ partyTheme: 4 }}>
               Create Invite
             </Link>
           </div>

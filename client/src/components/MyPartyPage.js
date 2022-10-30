@@ -26,11 +26,13 @@ const MyPartyPage = () => {
   const [addGuest, { error }] = useMutation(ADD_GUEST);
   const [addDescription, { descErr }] = useMutation(ADD_DESCRIPTION);
 
-  const party = data?.party || {};
+  const party = data?.partyById || {};
 
   const [dupeState, setDupeState] = useState(false);
   const [formState, setFormState] = useState({ email: "" });
-  const [descState, setDescState] = useState({ description: "" });
+  const [descState, setDescState] = useState({
+    description: party.description,
+  });
 
   const handleGuestChange = (event) => {
     const { name, value } = event.target;
