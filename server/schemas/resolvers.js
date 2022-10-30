@@ -69,7 +69,7 @@ const resolvers = {
       if (context.user) {
         const party = await Party.create({
           ...args,
-          //host: context.user.username,
+          host: context.user.username,
           rsvps: [],
           declines: [],
         });

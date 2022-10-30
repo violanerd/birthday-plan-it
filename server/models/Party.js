@@ -19,7 +19,7 @@ const partySchema = new Schema(
         type: String,
         validate: [validateEmail, "Must match an email address!"],
         match: [/.+@.+\..+/, "Must match an email address!"],
-        unique: true,
+        //unique: true,
       },
     ],
     rsvps: [
@@ -27,7 +27,7 @@ const partySchema = new Schema(
         type: String,
         validate: [validateEmail, "Must match an email address!"],
         match: [/.+@.+\..+/, "Must match an email address!"],
-        unique: true,
+        //unique: true,
       },
     ],
     declines: [
@@ -35,7 +35,7 @@ const partySchema = new Schema(
         type: String,
         validate: [validateEmail, "Must match an email address!"],
         match: [/.+@.+\..+/, "Must match an email address!"],
-        unique: true,
+        //unique: true,
       },
     ],
     date: {

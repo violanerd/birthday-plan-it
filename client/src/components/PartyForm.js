@@ -55,6 +55,7 @@ function PartyForm({partyTheme}) {
               variables: { ...partyFormState },
             });
             partyId = data.addParty._id
+            console.log("data", data)
           } catch (e) {
             console.error(e)
             console.log(error);
