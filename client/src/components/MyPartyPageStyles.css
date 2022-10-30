@@ -1,0 +1,143 @@
+body {
+
+  background-color: var(--darkest-purple);
+  background-image: url("./assets/theme-3-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.emailer-container {
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  justify-content: center;
+  text-align: left;
+}
+
+.left-container {
+  /* background-color: var(--white);
+  padding: 15px; took these out because then it had double backgrounds*/
+  border-radius: 8px;
+  margin: 0 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.right-container {
+  width: 25%;
+  margin: 0 25px;
+  padding: 35px;
+}
+
+.right-container .guestlist-heading {
+  color: var(--white);
+  font-size: 1.7rem;
+  padding-bottom: 15px;
+}
+
+.email-form {
+  justify-content: left;
+  /* text-align: left; took out to get all the contents of right container to be centered*/
+}
+/* edits to render the invitation */
+.invitation {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.invitation-fields {
+  margin-top: 2rem; /* this is what I added to get it to scoot down*/
+  top: 125px;
+  left: 125px;
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  width: 275px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.data-area {
+  border-style: none;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+  padding: 6px 5px;
+  font-size: 36px;
+  background-color: transparent;
+  color: var(--drk-vibrant-purple);
+  font-weight: 700;
+  outline-color: var(--pale-purple);
+}
+.data-text {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--drk-vibrant-purple);
+}
+.date, .time, .location {
+  margin-bottom: 12px;
+  padding: 2px;
+}
+.date-time {
+  width: 100%;
+}
+.host-message, .guest-name {
+  color: white;
+}
+textarea.host-message.data-area {
+  border-radius: 8px;
+  border: 2px solid var(--white);
+}
+.send-email {
+  margin-top: 15px;
+  background-color: var(--drk-vibrant-purple);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: 0.3s;
+  
+}
+.send-email:hover {
+  background-color: var(--header-red);
+}
+
+.center {
+  text-align: center;
+}
+
+.invite-guest-btn {
+  background-color: var(--drk-vibrant-purple);
+  padding: 7px 14px;
+  border-radius: 25px;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.invite-guest-btn:hover {
+  background-color: var(--lt-vibrant-purple);
+}

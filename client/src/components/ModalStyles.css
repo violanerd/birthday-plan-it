@@ -1,0 +1,221 @@
+.modalBackdrop {
+  background: rgba(15, 6, 45, 0.7);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.modalContainer {
+  top: 25%;
+  position: relative;
+  background: var(--white);
+  box-shadow: 0 0 25px rgb(39, 21, 77);
+  border-radius: 5px;
+  width: 380px;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.screencap {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.modalTitle {
+  color: var(--lt-purple);
+  font-size: 36px;
+  font-weight: 700;
+  padding-bottom: 18px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.email-password-container {
+  width: 350px;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.username-field,
+.email-field,
+.password-field {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  color: var(--lt-purple);
+  font-weight: 600;
+  align-items: center;
+}
+
+.email-label {
+  font-size: 1.1rem;
+}
+
+.password-label {
+  font-size: 1.1rem;
+}
+
+.username-label {
+  font-size: 1.1rem;
+}
+
+.email-password-input {
+  color: var(--med-purple);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 5px;
+  border: 2px solid rgba(179, 177, 196, 0.5);
+  border-radius: 5px;
+}
+
+.flex-row {
+  margin: 15px 0;
+}
+
+.username-field,
+.email-field,
+.password-field,
+input {
+  font-size: 12px;
+  width: 275px;
+  margin: 0 auto;
+}
+
+.signup-button {
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 71px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--white);
+  background-color: var(--lt-purple);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0 7px 0;
+}
+
+.signup-button:hover {
+  background-color: var(--med-purple);
+  border: 3px solid var(--med-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.log-in-btn {
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 76px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--white);
+  background-color: var(--lt-purple);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0 7px 0;
+}
+
+.log-in-btn:hover {
+  background-color: var(--med-purple);
+  border: 3px solid var(--med-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-up-btn {
+  padding: 6px 18px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
+  margin-right: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sign-up-btn:hover {
+  background-color: var(--lt-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-button {
+  padding: 6px 24px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
+  margin-right: 7px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-button:hover,
+.sign-up-btn:hover {
+  background-color: var(--lt-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close-button {
+  padding: 6px 24px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  border: 3px solid var(--header-red);
+  background-color: var(--header-red);
+  color: var(--white);
+}
+
+.login-button:hover, .sign-up-btn:hover {
+
+  background-color: var(--lt-purple);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close-button {
+  padding: 6px 24px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px solid var(--lt-purple);
+  color: var(--lt-purple);
+  background-color: transparent;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  border: 3px solid var(--header-red);
+  background-color: var(--header-red);
+  color: var(--white);
+}

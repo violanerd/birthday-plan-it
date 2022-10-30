@@ -1,0 +1,61 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem;
+  background-color: var(--drk-vibrant-purple);
+}
+
+.footer-container {
+  margin: auto;
+  max-width: 1140px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-container .birthday-plan-it-logo {
+  width: 250px;
+  padding-bottom: 0.3rem;
+}
+
+.footer-container .subhead {
+  padding-bottom: 0.3rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.footer-container .credits {
+  font-size: 1.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.footer-container .copyright {
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 568px) {
+  .footer {
+    height: 230px;
+  }
+  .footer-container .birthday-plan-it-logo {
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-container .subhead {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  .footer-container .credits {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .footer-container .copyright {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}

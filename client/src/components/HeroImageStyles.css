@@ -1,0 +1,250 @@
+.hero {
+  background: rgb(15, 6, 45);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 6, 45, 1) 17%,
+    rgba(57, 53, 112, 1) 58%,
+    rgba(67, 67, 122, 1) 79%,
+    rgba(91, 91, 168, 1) 100%
+  );
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.image-container {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("./assets/plan-it-bkgrd.png");
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-size: fixed;
+  background-position: top center;
+  opacity: 25%;
+}
+
+.background-watermark {
+  display: block;
+  margin-top: 125px;
+  width: 100vw;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  opacity: 25%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero .content {
+  margin-top: 60px;
+  position: relative;
+  width: 70%;
+  max-width: 900px;
+  z-index: 2;
+}
+
+.hero .content h1 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 5.2rem;
+  margin-bottom: 2.5rem;
+}
+
+span {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero .content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.signup-btn {
+  background-color: var(--header-red);
+  border-radius: 25px;
+  padding: 0.3rem 1.25rem;
+  font-size: 1.2rem;
+  color: var(--white);
+  border: 3px solid var(--header-red);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: var(--drk-red);
+}
+
+.login-btn {
+  background-color: none;
+  border-radius: 25px;
+  padding: 0.3rem 1.7rem;
+  font-size: 1.2rem;
+  color: var(--accent-yellow);
+  border: 3px solid var(--accent-yellow);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: rgba(15, 6, 45, 0.3);
+}
+
+.theme-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.theme-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  padding-bottom: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.theme-card {
+  background-color: var(--white);
+  padding: 15px 15px 20px 15px;
+  border-radius: 7px;
+  box-shadow: 0 0 30px var(--drk-vibrant-purple);
+}
+
+.theme-card img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--pale-purple);
+}
+
+.theme-name {
+  padding: 6px 0 10px 0;
+  color: var(--med-purple);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.select-btn {
+  background-color: var(--header-red);
+  padding: 7px 14px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.select-btn:hover {
+  background-color: var(--drk-red);
+}
+
+@media screen and (max-width: 992px) {
+  .theme-name {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .select-btn {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .theme-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: auto;
+    /* grid-template-columns: 1fr; */
+  }
+
+  .theme-card {
+    width: 75%;
+    background-color: var(--white);
+    padding: 15px 15px 20px 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 30px var(--drk-vibrant-purple);
+  }
+
+  .theme-card img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--pale-purple);
+  }
+
+  .select-btn {
+    font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .image-container {
+    background-size: 100%;
+    opacity: 35%;
+  }
+
+  .hero .content h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .hero .content p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .login-btn:hover {
+    background-color: rgb(255, 230, 0, 0.2);
+  }
+
+  .theme-container {
+    max-width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .theme-h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+  }
+
+  #subhead {
+    padding-top: 10px;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  .theme-name {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
