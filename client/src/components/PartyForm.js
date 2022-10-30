@@ -48,7 +48,6 @@ function PartyForm({partyTheme}) {
           };
     const handlePartyFormSubmit = async (e) => {
         e.preventDefault();
-        console.log(partyFormState);
         let partyId;
         try {
             const { data }= await addParty({
@@ -56,14 +55,14 @@ function PartyForm({partyTheme}) {
             });
             partyId = data.addParty._id
             console.log("data", data)
+            
+            setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
+            window.location.assign(`/myparty/${partyId}`)
           } catch (e) {
-            console.error(e)
-            console.log(error);
+            alert(`Something went wrong on our end, ${e}`) // added for dev purposes
+            console.error("e", e)
+            //console.log("error", error);
           }
-  
-        setPartyFormState({hostName: '', description: '', date: '', time: '', location: '', guests: [], theme: "" })
-        window.location.assign(`/myparty/${partyId}`)
-        
     }
     return (
         <div className='background-container'>
@@ -92,6 +91,7 @@ function PartyForm({partyTheme}) {
                             <div className='date-time'>
                             <input className='time' type='time' name='time' value={partyFormState.time} onChange={handleChange}/>
                             </div>
+                            {error && <div style={{color: "red"}}>Create Invitation failed</div>}
                             <button className='create-invite-btn' type='submit'>
                                 Create Invitation
                             </button>
