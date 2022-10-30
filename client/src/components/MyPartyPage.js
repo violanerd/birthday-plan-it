@@ -133,8 +133,8 @@ const MyPartyPage = () => {
           </div>
         </div>
       </div>
-      <div className="right-container">
-        <div className="content-container">
+      <div className="right-container center">
+        {/* <div className="content-container"> */}
           <h1 className="guestlist-heading">Write a message to guests:</h1>
           <div className="messages-container">
                 <textarea
@@ -148,10 +148,11 @@ const MyPartyPage = () => {
                   onBlur={updateDesc}
                 ></textarea>
           </div>
+          <h1 className="guestlist-heading">Guest List</h1>
           <div className="email-form">
-          <h1 className="guestlist-heading">Create your guest list:</h1>
+          {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
             <form onSubmit={handleFormSubmit}>
-              <label htmlFor="email">Email address:</label>
+              <label htmlFor="email black">Enter an Email address:</label>
               <input
                 className="guest-name"
                 type="text"
@@ -187,11 +188,11 @@ const MyPartyPage = () => {
             </form>
           </div>
           <div>
-            <button onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+            <button className="send-email" onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
         </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
