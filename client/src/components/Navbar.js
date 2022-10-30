@@ -18,10 +18,10 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  const { loading, data } = useQuery(QUERY_USER_PARTY, {
-    variables: { username: Auth.getProfile().data.username },
-  });
-  const myPartyId = data.user.party._id;
+  // const { loading, data } = useQuery(QUERY_USER_PARTY, {
+  //   variables: { username: Auth.getProfile().data.username },
+  // });
+  // const myPartyId = data.user.party._id;
 
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
         {Auth.loggedIn() ? (
           <>
             <li>
-              <Link to={`/rsvp/${myPartyId}`}>My Party</Link>
+              {/* <Link to={`/rsvp/${myPartyId}`}>My Party</Link> */}
             </li>
             <li className="login-btn">
               <Link onClick={logout}>Logout</Link>

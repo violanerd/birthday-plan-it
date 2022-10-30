@@ -144,7 +144,7 @@ const MyPartyPage = () => {
                   maxLength="500"
                   name="description"
                   value={descState.description}
-                  onChange={handleDescUpdate}
+                  onChange={handleDescForm}
                   onBlur={updateDesc}
                 ></textarea>
           </div>
