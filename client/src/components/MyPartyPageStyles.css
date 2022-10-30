@@ -38,7 +38,7 @@ body {
 
 .email-form {
   justify-content: left;
-  text-align: left;
+  /* text-align: left; took out to get all the contents of right container to be centered*/
 }
 /* edits to render the invitation */
 .invitation {
@@ -98,4 +98,47 @@ body {
 textarea.host-message.data-area {
   border-radius: 8px;
   border: 2px solid var(--white);
+}
+.send-email {
+  margin-top: 15px;
+  background-color: var(--drk-vibrant-purple);
+  outline: none;
+  /* border: none; */
+  border-radius: 25px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .8rem;
+  transition: 0.3s;
+  
+}
+.send-email:hover {
+  background-color: var(--header-red);
+}
+
+.center {
+  text-align: center;
+}
+
+.invite-guest-btn {
+  background-color: var(--drk-vibrant-purple);
+  padding: 7px 14px;
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.invite-guest-btn:hover {
+  background-color: var(--lt-vibrant-purple);
 }

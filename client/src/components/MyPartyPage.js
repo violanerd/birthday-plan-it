@@ -130,13 +130,13 @@ const MyPartyPage = () => {
           </div>
         </div>
       </div>
-      <div className="right-container">
-        <div className="content-container">
+      <div className="right-container center">
+        {/* <div className="content-container"> */}
           <h1 className="guestlist-heading">Write a message to guests:</h1>
           <div className="messages-container">
                 <textarea
                   className="host-message data-area"
-                  placeholder="Message to guests here..."
+                  placeholder="message..."
                   rows="2"
                   maxLength="500"
                   name="description"
@@ -145,10 +145,11 @@ const MyPartyPage = () => {
 
                 ></textarea>
           </div>
+          <h1 className="guestlist-heading">Guest List</h1>
           <div className="email-form">
-          <h1 className="guestlist-heading">Create your guest list:</h1>
+          {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
             <form onSubmit={handleFormSubmit}>
-              <label htmlFor="email">Email address:</label>
+              <label htmlFor="email black">Enter an Email address:</label>
               <input
                 className="guest-name"
                 type="text"
@@ -157,7 +158,7 @@ const MyPartyPage = () => {
                 onChange={handleGuestChange}
               />
               <button className="invite-guest-btn" type="submit">
-                Invite Guest
+                Add to Guest List
               </button>
             </form>
             {error && <div style={{ color: "red" }}>Something went wrong.</div>}
@@ -170,7 +171,7 @@ const MyPartyPage = () => {
               <div className="invite-guests-container">
                 {/* <h1 className="guest-list-heading">Guest list:</h1> */}
                 <div className="guests-list">
-                  <p>Here is the list of guests you have invited:</p>
+                  <p className="center">Here is the list of guests you have invited:</p>
                   <ul>
                     {party.guests.map((guest) => (
                       <li className="guest" key={guest}>
@@ -183,11 +184,11 @@ const MyPartyPage = () => {
             </form>
           </div>
           <div>
-            <button onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+            <button className="send-email" onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
         </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
