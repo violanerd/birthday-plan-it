@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    parties: [Party]
+    party: Party
   }
 
   type Party {
@@ -14,6 +14,7 @@ const typeDefs = gql`
     description: String
     guests: [String]
     rsvps: [String]
+    declines: [String]
     date: String
     location: String
     time: String
@@ -29,8 +30,8 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String): User
-    parties(hostName: String): [Party]
-    party(_id: ID!): Party
+    partyByUser(hostName: String!): Party
+    partyById(_id: ID!): Party
     emailGuests(_id: ID!): Party
   }
 
@@ -48,6 +49,7 @@ const typeDefs = gql`
     ): Party
     inviteGuest(partyId: ID!, email: String!): Party
     rsvpToParty(partyId: ID!): Party
+    declineParty(partyId: ID!): Party
     addDescription(partyId: ID!, description: String!): Party
   }
 `;

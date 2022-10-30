@@ -9,7 +9,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("parties");
+          .populate("party");
 
         return userData;
       }
@@ -17,18 +17,18 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     users: async () => {
-      return User.find().select("-__v -password").populate("parties");
+      return User.find().select("-__v -password").populate("party");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
-        .populate("parties");
+        .populate("party");
     },
-    parties: async (parent, { hostName }) => {
-      const params = hostName ? { hostName } : {};
-      return Party.find(params).sort({ createdAt: -1 });
+    /* Currently no way to get all parties, something to add back if needed */
+    partyByUser: async (parent, { hostName }) => {
+      return Party.findOne({ hostName });
     },
-    party: async (parent, { _id }) => {
+    partyById: async (parent, { _id }) => {
       return Party.findOne({ _id });
     },
     emailGuests: async (parent, { _id }) => {
@@ -69,11 +69,13 @@ const resolvers = {
         const party = await Party.create({
           ...args,
           host: context.user.username,
+          rsvps: [],
+          declines: [],
         });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { parties: party._id } },
+          { party: party._id },
           { new: true }
         );
 
@@ -102,6 +104,22 @@ const resolvers = {
           const rsvp = await Party.findByIdAndUpdate(
             { _id: party._id },
             { $push: { rsvps: context.user.email } },
+            { new: true, runValidators: true }
+          );
+          return rsvp;
+        }
+
+        throw new AuthenticationError("You weren't invited!");
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    declineParty: async (parent, args, context) => {
+      if (context.user) {
+        const party = await Party.findById({ _id: args.partyId });
+        if (party.guests.includes(context.user.email)) {
+          const rsvp = await Party.findByIdAndUpdate(
+            { _id: party._id },
+            { $push: { declines: context.user.email } },
             { new: true, runValidators: true }
           );
           return rsvp;
