@@ -111,6 +111,7 @@ const MyPartyPage = () => {
   console.log("party details", party);
   let date = dateFormat(party.date)
   let time = parseTime(party.time)
+  
   return (
     <div className="emailer-container">
       <div className="left-container">

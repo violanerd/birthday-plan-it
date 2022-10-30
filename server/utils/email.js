@@ -18,13 +18,7 @@ async function sendEmail(maillist, id) {
     to: maillist, // List of recipients
     subject: "You've been invited!", // Subject line
     //text: 'Testing', // Plain text body
-    html: `<h1>RSVP to your invitation here:</h1><a href='http://localhost:3000/rsvp/${id}' target='_blank'>RSVP link</a>`,
-    // attachments: [
-    //     {
-    //         filename: "greenmountains.jpg",
-    //         path: './greenmountains.jpg'
-    //     }
-    // ]
+    html: `<h1>RSVP to your invitation here:</h1><a href='https://birthdayplanit.herokuapp.com/rsvp/${id}' target='_blank'>RSVP link</a>`,
     };
     console.log(mailOptions.html)
     try {
