@@ -102,17 +102,15 @@ textarea.host-message.data-area {
 .send-email {
   margin-top: 15px;
   background-color: var(--drk-vibrant-purple);
-  outline: none;
-  /* border: none; */
+  border: none;
   border-radius: 25px;
   padding: 10px 16px;
-  border-radius: 25px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--white);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .8rem;
+  font-size: .9rem;
   transition: 0.3s;
   
 }
@@ -128,6 +126,7 @@ textarea.host-message.data-area {
   background-color: var(--drk-vibrant-purple);
   padding: 7px 14px;
   border-radius: 25px;
+  border: none;
   margin-top: 15px;
   margin-bottom: 10px;
   padding: 10px 16px;
