@@ -1,14 +1,14 @@
 import React from "react";
 // import EmailButton from "../components/EmailButton";
 import Navbar from "../components/Navbar";
-import MyPartyPage from "../components/MyPartyPage";
+import RsvpPage from "../components/RsvpPage";
 import Footer from "../components/Footer";
 
-const MyParty = () => {
+const Rsvp = () => {
   return (
     <div>
       <Navbar />
-      <MyPartyPage />
+      <RsvpPage />
       {/* <div>
         MyParty
         <EmailButton />
@@ -18,4 +18,4 @@ const MyParty = () => {
   );
 };
 
-export default MyParty;
+export default Rsvp;

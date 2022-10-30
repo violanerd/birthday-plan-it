@@ -71,7 +71,15 @@ export const RSVP = gql`
     }
   }
 `;
-
+export const DECLINE = gql`
+  mutation ($partyId: ID!) {
+    declineParty(partyId: $partyId) {
+      _id
+      guests
+      declines
+    }
+  }
+`;
 export const ADD_DESCRIPTION = gql`
   mutation ($partyId: ID!, $description: String!) {
     addDescription(partyId: $partyId, description: $description) {

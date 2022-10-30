@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, useLazyQuery } from "@apollo/client";
@@ -28,11 +27,13 @@ const MyPartyPage = () => {
   const [addGuest, { error }] = useMutation(ADD_GUEST);
   const [addDescription, { descErr }] = useMutation(ADD_DESCRIPTION);
 
-  const party = data?.party || {};
+  const party = data?.partyById || {};
 
   const [dupeState, setDupeState] = useState(false);
   const [formState, setFormState] = useState({ email: "" });
-  const [descState, setDescState] = useState({ description: "" });
+  const [descState, setDescState] = useState({
+    description: party.description,
+  });
 
   const handleGuestChange = (event) => {
     const { name, value } = event.target;
@@ -61,14 +62,16 @@ const MyPartyPage = () => {
     }
   };
 
-  const handleDescUpdate = async (event) => {
+  const handleDescForm = async (event) => {
     const { name, value } = event.target;
 
     setDescState({
       ...descState,
       [name]: value,
     });
+  };
 
+  const updateDesc = async (event) => {
     try {
       await addDescription({
         variables: { ...descState, partyId: party._id },
@@ -142,7 +145,7 @@ const MyPartyPage = () => {
                   name="description"
                   value={descState.description}
                   onChange={handleDescUpdate}
-
+                  onBlur={updateDesc}
                 ></textarea>
           </div>
           <div className="email-form">
@@ -180,6 +183,7 @@ const MyPartyPage = () => {
                   </ul>
                 </div>
               </div>
+
             </form>
           </div>
           <div>
@@ -192,4 +196,3 @@ const MyPartyPage = () => {
 };
 
 export default MyPartyPage;
-

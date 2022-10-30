@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Logo from "./assets/birthday-plan-it-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Auth from "../utils/auth";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_PARTY } from "../utils/queries";
 
 const Navbar = () => {
   // ACTIVATE SLIDE IN MENU BY 'click' STATE
@@ -15,6 +17,11 @@ const Navbar = () => {
   }
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+
+  const { loading, data } = useQuery(QUERY_USER_PARTY, {
+    variables: { username: Auth.getProfile().data.username },
+  });
+  const myPartyId = data.user.party._id;
 
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -43,11 +50,12 @@ const Navbar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/myparty">My Party</Link>
-        </li>
+
         {Auth.loggedIn() ? (
           <>
+            <li>
+              <Link to={`/rsvp/${myPartyId}`}>My Party</Link>
+            </li>
             <li className="login-btn">
               <Link onClick={logout}>Logout</Link>
             </li>

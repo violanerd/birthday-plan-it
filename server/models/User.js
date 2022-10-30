@@ -20,12 +20,10 @@ const userSchema = new Schema(
       required: true,
       minlength: 6,
     },
-    parties: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Party",
-      },
-    ],
+    party: {
+      type: Schema.Types.ObjectId,
+      ref: "Party",
+    },
   },
   {
     toJSON: {

@@ -30,6 +30,14 @@ const partySchema = new Schema(
         unique: true,
       },
     ],
+    declines: [
+      {
+        type: String,
+        validate: [validateEmail, "Must match an email address!"],
+        match: [/.+@.+\..+/, "Must match an email address!"],
+        unique: true,
+      },
+    ],
     date: {
       type: Date,
     },
