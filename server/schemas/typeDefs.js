@@ -30,7 +30,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String): User
-    partyByUser(hostName: String!): Party
+    partyByUser(username: String!): Party
     partyById(_id: ID!): Party
     emailGuests(_id: ID!): Party
   }

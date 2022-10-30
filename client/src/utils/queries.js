@@ -46,17 +46,12 @@ export const QUERY_USER = gql`
     }
   }
 `;
-export const QUERY_PARTIES = gql`
-  query partyByUser($hostName: String!) {
-    partyByUser(hostName: $hostName) {
-      _id
-      hostName
-      description
-      guests
-      date
-      location
-      time
-      theme
+export const QUERY_USER_PARTY = gql`
+  query User($username: String) {
+    user(username: $username) {
+      party {
+        _id
+      }
     }
   }
 `;
