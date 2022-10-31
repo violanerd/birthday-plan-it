@@ -79,7 +79,7 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-  const [sendEmail, { data: emailData }] = useLazyQuery(EMAIL_GUESTS);
+  const [sendEmail, { error: emailError, data: emailData}] = useLazyQuery(EMAIL_GUESTS)
   useEffect(() => {
     if (emailData) {
       console.log(emailData);
@@ -202,6 +202,7 @@ const MyPartyPage = () => {
           >
             Email my invite!
           </button>
+          {emailError && <div style={{color: "red"}}>Uh, oh. Something went worng. Do you have guests on your list?</div>}
         </div>
       </div>
     </div>
