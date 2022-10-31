@@ -2,6 +2,7 @@ const { User, Party } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const sendEmail = require("../utils/email");
+const { GraphQLError } = require('graphql');
 
 const resolvers = {
   Query: {
@@ -33,11 +34,16 @@ const resolvers = {
       return Party.findOne({ _id });
     },
     emailGuests: async (parent, { _id }) => {
-      console.log("made it to the back end");
+      
       const guests = await Party.findOne({ _id });
+      console.log(guests)
+      if (!guests.guests.length){
+        throw new GraphQLError("No guests to invite")
+      }
+      
       const response = await sendEmail(guests.guests, _id);
-      console.log(response);
-      return guests;
+      console.log(response); //server side error handling
+      return guests
     },
 
     // Future Dev: Get a list of all parties you've been invited to?

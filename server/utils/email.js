@@ -25,7 +25,7 @@ async function sendEmail(maillist, id) {
       let info = await transport.sendMail(mailOptions) 
       return info.messageId
     } catch (err) {
-      console.log("Error", err)
+      return err
     }
 }
 
