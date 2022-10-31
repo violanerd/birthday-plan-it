@@ -7,6 +7,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { dateFormat, parseTime } from "../utils/date";
 import "./MyPartyPageStyles.css";
+import "./RsvpPageStyles.css";
 import ThemeOne from "./assets/theme01.jpg";
 import ThemeTwo from "./assets/theme02.jpg";
 import ThemeThree from "./assets/theme03.jpg";
@@ -110,9 +111,9 @@ const RsvpPage = () => {
         </div>
         </div>
       <div className="right-container">
-        <div className="content-container">
-          <div className="invite-guests-container">
-            <h1 className="guestlist-heading">Guest list:</h1>
+        <div className="rsvp-content-container">
+          <div className="rsvp-guests-container">
+            <h1 className="guestlist-heading rsvp-heading">To RSVP input in your email address:</h1>
             <div className="guests-list">
               <ul>
                 {party.guests.map((guest) => (
