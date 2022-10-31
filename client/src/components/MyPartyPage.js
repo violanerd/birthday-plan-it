@@ -14,11 +14,12 @@ import backgroundTwo from "./assets/theme-2-background.png";
 import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
 import { dateFormat, parseTime } from "../utils/date";
+import { Link } from "react-router-dom";
 
 
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
-  console.log(partyId);
+ // console.log(partyId);
 
   const { loading, data } = useQuery(QUERY_PARTY, {
     variables: { id: partyId },
@@ -80,13 +81,20 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-  const [sendEmail, {data: emailData}] = useLazyQuery(EMAIL_GUESTS)
+  
+
+  const [sendEmail, { error: emailError, data: emailData}] = useLazyQuery(EMAIL_GUESTS)
   useEffect(() => {
       if (emailData) {
-          console.log(emailData)
-        alert("emails sent successfully!")
+          console.log("data here", emailData)
+          // alert("Email's sent successfully")
+          // window.location.assign(`/rsvp/${partyId}`)
+        
+      } else {
+        console.log("Error", emailError)
       }
-    }, [emailData]);
+    }, [emailData, emailError]);
+
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 
   useEffect(() => {
@@ -108,7 +116,7 @@ const MyPartyPage = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  console.log("party details", party);
+  //console.log("party details", party);
   let date = dateFormat(party.date)
   let time = parseTime(party.time)
   
@@ -190,6 +198,7 @@ const MyPartyPage = () => {
           </div>
           <div>
             <button className="send-email" onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+            {emailError && <div style={{color: "red"}}>Uh, oh. Something went worng. Do you have guests on your list?</div>}
         </div>
         </div>
       </div>
