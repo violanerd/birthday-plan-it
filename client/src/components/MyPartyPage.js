@@ -144,11 +144,11 @@ const MyPartyPage = () => {
       </div>
       <div className="right-container center">
         {/* <div className="content-container"> */}
-        <h1 className="guestlist-heading">Write a message to guests:</h1>
+        <h1 className="guestlist-heading">Write a message to your guests:</h1>
         <div className="messages-container">
           <textarea
             className="host-message data-area"
-            placeholder="Message to guests here..."
+            placeholder="Message goes here..."
             rows="2"
             maxLength="500"
             name="description"
@@ -157,11 +157,11 @@ const MyPartyPage = () => {
             onBlur={updateDesc}
           ></textarea>
         </div>
-        <h1 className="guestlist-heading">Guest List</h1>
+        <h1 className="guestlist-heading guestlist-h1">Create your guest List</h1>
         <div className="email-form">
           {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
-          <form onSubmit={handleFormSubmit}>
-            <label htmlFor="email black">Enter an Email address:</label>
+          <form onSubmit={handleFormSubmit} className='invite-guests-here'>
+            <label htmlFor="email"className='enter-email'>Enter an email address:</label>
             <input
               className="guest-name"
               type="text"
@@ -183,7 +183,7 @@ const MyPartyPage = () => {
             <div className="invite-guests-container">
               {/* <h1 className="guest-list-heading">Guest list:</h1> */}
               <div className="guests-list">
-                <p>Here is the list of guests you have invited:</p>
+                <p className='email-list-of-guests'>Here is the list of guests you have invited:</p>
                 <ul>
                   {party.guests.map((guest) => (
                     <li className="guest" key={guest}>
@@ -202,7 +202,7 @@ const MyPartyPage = () => {
           >
             Email my invite!
           </button>
-          {emailError && <div style={{color: "red"}}>Uh, oh. Something went worng. Do you have guests on your list?</div>}
+          {emailError && <div style={{color: "red"}}>Uh, oh. Something went wrong. Do you have guests on your list?</div>}
         </div>
       </div>
     </div>
