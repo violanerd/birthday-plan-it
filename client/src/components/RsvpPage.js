@@ -5,7 +5,7 @@ import { QUERY_PARTY } from "../utils/queries";
 import { RSVP, DECLINE } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
-
+import { dateFormat, parseTime } from "../utils/date";
 import "./MyPartyPageStyles.css";
 import ThemeOne from "./assets/theme01.jpg";
 import ThemeTwo from "./assets/theme02.jpg";
@@ -45,7 +45,17 @@ const RsvpPage = () => {
     }
   }
 
-  function handleDecline(event) {}
+  async function handleDecline(event) {
+    if (true) {
+      try {
+        await decline({
+          variables: { partyId: party._id },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
 
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 
@@ -68,23 +78,41 @@ const RsvpPage = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
+  let date = dateFormat(party.date)
+  let time = parseTime(party.time)
   return (
     <div className="emailer-container">
       <div className="left-container">
+      <div className="invitation">
         <img
           className="theme-three"
           src={renderPartyTheme}
           alt="dance-party-theme"
         />
-        <p style={{ color: "black" }}>
-          {party.hostName} is the host of this party
-        </p>
-      </div>
+        <div className="invitation-fields">
+            <div className="you-r-invited">YOU'RE INVITED!</div>
+            <div className="data-area">{party.hostName}</div>
+            <p className="label label-p">
+              {" "}
+              would like to invite you to their birthday party!
+            </p>
+            <div className="label">The party will be held at</div>
+            <div className="location data-area data-text">{party.location}</div>
+            <div className="label">The date of the party will be</div>
+            <div className="date-time">
+              <div className="date data-area data-text">{date}</div>
+            </div>
+            <div className="label">The party will start at</div>
+            <div className="date-time">
+              <div className="time data-area data-text">{time}</div>
+            </div>
+          </div>
+        </div>
+        </div>
       <div className="right-container">
         <div className="content-container">
           <div className="invite-guests-container">
-            <h1 className="guest-list-heading">Guest list:</h1>
+            <h1 className="guestlist-heading">Guest list:</h1>
             <div className="guests-list">
               <ul>
                 {party.guests.map((guest) => (

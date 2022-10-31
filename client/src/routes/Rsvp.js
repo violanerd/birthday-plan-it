@@ -9,6 +9,10 @@ const Rsvp = () => {
     <div>
       <Navbar />
       <RsvpPage />
+<<<<<<< HEAD
+=======
+      
+>>>>>>> dd608fb41bf9ba1ed93a5cc7cedcd41bcd432c4e
       <Footer />
     </div>
   );

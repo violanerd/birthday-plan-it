@@ -88,4 +88,7 @@ an email list containing your guests emails that you want the invitation sent to
 
 ### Madalyne Cross, Joshua Haddix & Ron Dronet
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd608fb41bf9ba1ed93a5cc7cedcd41bcd432c4e

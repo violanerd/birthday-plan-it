@@ -15,7 +15,6 @@ import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
 import { dateFormat, parseTime } from "../utils/date";
 
-
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
   console.log(partyId);
@@ -80,11 +79,12 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-  const [sendEmail, { data: emailData }] = useLazyQuery(EMAIL_GUESTS)
+  const [sendEmail, { error: emailError, data: emailData}] = useLazyQuery(EMAIL_GUESTS)
   useEffect(() => {
     if (emailData) {
-      console.log(emailData)
-      alert("emails sent successfully!")
+      console.log(emailData);
+      alert("emails sent successfully!");
+      window.location.assign(`/rsvp/${partyId}`);
     }
   }, [emailData]);
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
@@ -109,26 +109,35 @@ const MyPartyPage = () => {
     return <div>Loading...</div>;
   }
   console.log("party details", party);
+
   let date = dateFormat(party.date)
   let time = parseTime(party.time)
+
   return (
     <div className="emailer-container">
       <div className="left-container">
-        <div className='invitation'>
-          <img className='theme-three' src={renderPartyTheme} alt='dance-party-theme' />
-          <div className='invitation-fields'>
-            <div className='you-r-invited'>YOU'RE INVITED!</div>
-            <div className='data-area'>{party.hostName}</div>
-            <p className='label label-p' > would like to invite you to their birthday party!</p>
-            <div className='label'>The party will be held at</div>
+        <div className="invitation">
+          <img
+            className="theme-three"
+            src={renderPartyTheme}
+            alt="dance-party-theme"
+          />
+          <div className="invitation-fields">
+            <div className="you-r-invited">YOU'RE INVITED!</div>
+            <div className="data-area">{party.hostName}</div>
+            <p className="label label-p">
+              {" "}
+              would like to invite you to their birthday party!
+            </p>
+            <div className="label">The party will be held at</div>
             <div className="location data-area data-text">{party.location}</div>
-            <div className='label'>The date of the party will be</div>
-            <div className='date-time'>
-              <div className='date data-area data-text'>{date}</div>
+            <div className="label">The date of the party will be</div>
+            <div className="date-time">
+              <div className="date data-area data-text">{date}</div>
             </div>
-            <div className='label'>The party will start at</div>
-            <div className='date-time'>
-              <div className='time data-area data-text'>{time}</div>
+            <div className="label">The party will start at</div>
+            <div className="date-time">
+              <div className="time data-area data-text">{time}</div>
             </div>
           </div>
         </div>
@@ -152,7 +161,7 @@ const MyPartyPage = () => {
         <div className="email-form">
           {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
           <form onSubmit={handleFormSubmit} className='invite-guests-here'>
-            <label htmlFor="email black" className='enter-email'>Enter an email address:</label>
+            <label htmlFor="email"className='enter-email'>Enter an email address:</label>
             <input
               className="guest-name"
               type="text"
@@ -184,11 +193,16 @@ const MyPartyPage = () => {
                 </ul>
               </div>
             </div>
-
           </form>
         </div>
         <div>
-          <button className="send-email" onClick={() => sendEmail({ variables: { id: partyId } })}>Email my invite!</button>
+          <button
+            className="send-email"
+            onClick={() => sendEmail({ variables: { id: partyId } })}
+          >
+            Email my invite!
+          </button>
+          {emailError && <div style={{color: "red"}}>Uh, oh. Something went wrong. Do you have guests on your list?</div>}
         </div>
       </div>
     </div>
