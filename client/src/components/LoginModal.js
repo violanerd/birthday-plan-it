@@ -26,7 +26,7 @@ function Login({ handleModals }) {
       });
 
       Auth.login(data.login.token);
-      handleModals("login");
+      window.location.reload();
     } catch (e) {
       console.error(e);
     }
@@ -50,7 +50,6 @@ function Login({ handleModals }) {
             <input
               type="email"
               name="email"
-
               className="email-password-input"
               value={formState.email}
               onChange={handleChange}
@@ -64,17 +63,18 @@ function Login({ handleModals }) {
             <input
               type="password"
               name="password"
-
               className="email-password-input"
               value={formState.password}
               onChange={handleChange}
             />
           </div>
 
-          <button type="submit" className="log-in-btn">Login!</button>
+          <button type="submit" className="log-in-btn">
+            Login!
+          </button>
         </form>
 
-        {error && <div style={{color: "black"}}>Login failed</div>}
+        {error && <div style={{ color: "black" }}>Login failed</div>}
 
         <div className="flex-row">
           <button

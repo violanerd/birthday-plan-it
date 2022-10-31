@@ -45,7 +45,17 @@ const RsvpPage = () => {
     }
   }
 
-  function handleDecline(event) {}
+  async function handleDecline(event) {
+    if (true) {
+      try {
+        await decline({
+          variables: { partyId: party._id },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
 
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 

@@ -160,8 +160,15 @@ span {
   transition: 0.3s;
 }
 
+.select-btn.greyed-out {
+  background-color: #999;
+}
+
 .select-btn:hover {
   background-color: var(--drk-red);
+}
+.select-btn.greyed-out:hover {
+  background-color: #666;
 }
 
 @media screen and (max-width: 992px) {
@@ -199,7 +206,7 @@ span {
   }
 
   .select-btn {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
 

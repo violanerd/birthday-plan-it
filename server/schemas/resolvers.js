@@ -16,6 +16,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
     users: async () => {
       return User.find().select("-__v -password").populate("party");
     },
@@ -32,7 +33,7 @@ const resolvers = {
       return Party.findOne({ _id });
     },
     emailGuests: async (parent, { _id }) => {
-      console.log("made it to the back end")
+      console.log("made it to the back end");
       const guests = await Party.findOne({ _id });
       const response = await sendEmail(guests.guests, _id);
       console.log(response);
