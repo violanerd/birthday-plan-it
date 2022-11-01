@@ -78,18 +78,18 @@ const RsvpPage = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  let date = dateFormat(party.date)
-  let time = parseTime(party.time)
+  let date = dateFormat(party.date);
+  let time = parseTime(party.time);
   return (
     <div className="emailer-container">
       <div className="left-container">
-      <div className="invitation">
-        <img
-          className="theme-three"
-          src={renderPartyTheme}
-          alt="dance-party-theme"
-        />
-        <div className="invitation-fields">
+        <div className="invitation">
+          <img
+            className="theme-three"
+            src={renderPartyTheme}
+            alt="dance-party-theme"
+          />
+          <div className="invitation-fields">
             <div className="you-r-invited">YOU'RE INVITED!</div>
             <div className="data-area">{party.hostName}</div>
             <p className="label label-p">
@@ -108,7 +108,7 @@ const RsvpPage = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <div className="right-container">
         <div className="content-container">
           <div className="invite-guests-container">
@@ -117,34 +117,40 @@ const RsvpPage = () => {
               <ul>
                 {party.guests.map((guest) => (
                   <li className="guest" key={guest}>
-                    {guest}
                     {/*
-                    IF (It's not your email) {
-                        show nothing
-                    }ELSE IF (You've RSVP'd) {
+                    
+                    }IF (You've RSVP'd) {
                         Show RSVP box
                     } ELSE IF( You Declined) {
                         Show Decline box
+                    } ELSE IF (It's not your email) {
+                        show nothing
                     } ELSE {
                         Show Buttons
                     }
                      */}
-                    {guest !== me.email ? (
-                      <></>
-                    ) : party.rsvps.includes(me.email) ? (
+                    {party.rsvps.includes(guest) ? (
                       <span className="has-rsvpd">RSVP'd!</span>
-                    ) : party.declines.includes(me.email) ? (
+                    ) : party.declines.includes(guest) ? (
                       <span className="has-declined">Declined</span>
+                    ) : guest !== me.email ? (
+                      <></>
                     ) : (
                       <>
-                        <button className="rsvp" onClick={handleRsvp}>
+                        <button className="rsvp-btn" onClick={handleRsvp}>
                           RSVP
                         </button>
-                        <button className="decline" onClick={handleDecline}>
+                        <button className="decline-btn" onClick={handleDecline}>
                           Decline
                         </button>
                       </>
                     )}
+                    {console.log(
+                      "Guest",
+                      guest,
+                      party.declines.includes(guest)
+                    )}
+                    {guest}
                   </li>
                 ))}
               </ul>
