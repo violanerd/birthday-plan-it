@@ -9,7 +9,6 @@ const Rsvp = () => {
     <div>
       <Navbar />
       <RsvpPage />
-      
       <Footer />
     </div>
   );
