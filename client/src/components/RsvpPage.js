@@ -94,7 +94,7 @@ const RsvpPage = () => {
             src={renderPartyTheme}
             alt="dance-party-theme"
           />
-          <div className="invitation-fields">
+          <div className="invitation-fields rsvp-invitation-fields">
             <div className="you-r-invited">YOU'RE INVITED!</div>
             <div className="data-area">{party.hostName}</div>
             <p className="label label-p">
@@ -114,14 +114,14 @@ const RsvpPage = () => {
           </div>
         </div>
       </div>
-      <div className="right-container">
+      <div className="right-container rsvp-rt-container">
         <div className="rsvp-content-container">
           <div className="rsvp-guests-container">
-            <h1 className="guestlist-heading rsvp-heading">Sign up and login with your email address to RSVP:</h1>
+            <h1 className="guestlist-heading rsvp-heading">Sign up or login with your email address, then confirm or decline your RSVP invite:</h1>
             <div className="guests-list">
               <ul>
                 {party.guests.map((guest) => (
-                  <li className="guest" key={guest}>
+                  <li className="rsvp-guest" key={guest}>
                     {/*
                     
                     }IF (You've RSVP'd) {
@@ -135,18 +135,18 @@ const RsvpPage = () => {
                     }
                      */}
                     {party.rsvps.includes(guest) ? (
-                      <span className="has-rsvpd">RSVP'd!</span>
+                      <span className="has-rsvpd">CONFIRMED</span>
                     ) : party.declines.includes(guest) ? (
-                      <span className="has-declined">Declined</span>
+                      <span className="has-declined">DECLINED</span>
                     ) : guest !== me.email ? (
                       <></>
                     ) : (
                       <>
                         <button className="rsvp-btn" onClick={handleRsvp}>
-                          RSVP
+                          CONFIRM
                         </button>
                         <button className="decline-btn" onClick={handleDecline}>
-                          Decline
+                          DECLINE
                         </button>
                       </>
                     )}
