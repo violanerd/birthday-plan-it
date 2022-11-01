@@ -1,5 +1,4 @@
 body {
-
   background-color: var(--darkest-purple);
   background-image: url("./assets/theme-3-background.png");
   background-repeat: no-repeat;
@@ -21,28 +20,34 @@ body {
   padding: 15px; took these out because then it had double backgrounds*/
   border-radius: 8px;
   margin: 0 25px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
 .right-container {
   width: 25%;
   margin: 0 25px;
   padding: 35px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 30px var(--drk-vibrant-purple);
 }
 
-.right-container .guestlist-heading {
-  color: var(--white);
-  font-size: 1.7rem;
+.guestlist-heading {
+  color: var(--drk-vibrant-purple);
+  font-size: 2rem;
   padding-bottom: 15px;
+  line-height: 2.3rem;
+}
+
+.right-container .guestlist-h1 {
+  padding: 20px 0 0 0;
+  font-size: 1.4rem;
 }
 
 .email-form {
   justify-content: left;
-  /* text-align: left; took out to get all the contents of right container to be centered*/
 }
 /* edits to render the invitation */
 .invitation {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   position: relative;
   border-radius: 8px;
   margin: 0 auto;
@@ -51,7 +56,9 @@ body {
   padding: 15px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 30px var(--drk-vibrant-purple);
 }
+
 .invitation-fields {
   margin-top: 2rem; /* this is what I added to get it to scoot down*/
   top: 125px;
@@ -80,46 +87,98 @@ body {
   outline-color: var(--pale-purple);
 }
 .data-text {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--drk-vibrant-purple);
 }
-.date, .time, .location {
+.date,
+.time,
+.location {
   margin-bottom: 12px;
   padding: 2px;
 }
 .date-time {
   width: 100%;
 }
-.host-message, .guest-name {
-  color: white;
+.host-message,
+.guest-name {
+  color: var(--drk-vibrant-purple);
+}
+
+input.guest-name {
+  border: 2px solid var(--pale-purple);
 }
 textarea.host-message.data-area {
+  font-family: "Poppins", Arial, sans-serif;
   border-radius: 8px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--pale-purple);
+  text-align: left;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 400;
 }
-.send-email {
+
+textarea.host-message.data-area::placeholder {
+  font-size: 1rem;
+  color: var(--pale-purple);
+  font-weight: 400;
+}
+
+textarea.host-message.data-area::placeholder .send-email {
+  font-family: "Poppins", Arial, sans-serif;
   margin-top: 15px;
-  background-color: var(--drk-vibrant-purple);
+  /* background-color: var(--drk-vibrant-purple); */
   border: none;
   border-radius: 25px;
   padding: 10px 16px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1px;
-  color: var(--white);
+  color: var(--pale-purple);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 0.9rem;
   transition: 0.3s;
-  
 }
-.send-email:hover {
-  background-color: var(--header-red);
+
+.email-form {
+  padding: 0;
+}
+
+.enter-email {
+  color: var(--drk-vibrant-purple);
+  margin-bottom: 10px;
+}
+
+.invite-guests-here {
+  line-height: 2rem;
+}
+
+.guest-name {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .center {
   text-align: center;
+}
+
+.guests-list {
+  color: var(--drk-vibrant-purple);
+  margin-top: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.email-list-of-guests {
+  padding-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+}
+
+.guest {
+  font-weight: 600;
 }
 
 .invite-guest-btn {
@@ -127,17 +186,92 @@ textarea.host-message.data-area {
   padding: 7px 14px;
   border-radius: 25px;
   border: none;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  padding: 10px 16px;
+  margin-top: 20px;
+  padding: 10px 20px;
   color: var(--white);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 1px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .invite-guest-btn:hover {
-  background-color: var(--lt-vibrant-purple);
+  background-color: var(--header-red);
+}
+
+.send-email {
+  background-color: var(--header-red);
+  padding: 7px 14px;
+  border-radius: 25px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.send-email:hover {
+  background-color: var(--drk-vibrant-purple);
+}
+
+@media screen and (max-width: 992px) {
+  .emailer-container {
+    margin-top: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .invitation {
+    margin-bottom: 35px;
+  }
+
+  .right-container {
+    width: 54%;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .emailer-container {
+    margin-top: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .invitation {
+    margin-bottom: 35px;
+  }
+
+  .right-container {
+    width: 70%;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .invitation-fields {
+    top: 95px;
+    left: 100px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    width: 225px;
+  }
+
+  .right-container {
+    width: 88%;
+    padding: 40px;
+  }
 }

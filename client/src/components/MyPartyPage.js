@@ -15,7 +15,6 @@ import backgroundThree from "./assets/theme-3-background.png";
 import backgroundFour from "./assets/theme-4-background.png";
 import { dateFormat, parseTime } from "../utils/date";
 
-
 const MyPartyPage = () => {
   const { id: partyId } = useParams();
   console.log(partyId);
@@ -80,13 +79,14 @@ const MyPartyPage = () => {
       console.error(e);
     }
   };
-  const [sendEmail, {data: emailData}] = useLazyQuery(EMAIL_GUESTS)
+  const [sendEmail, { error: emailError, data: emailData}] = useLazyQuery(EMAIL_GUESTS)
   useEffect(() => {
-      if (emailData) {
-          console.log(emailData)
-        alert("emails sent successfully!")
-      }
-    }, [emailData]);
+    if (emailData) {
+      console.log(emailData);
+      alert("emails sent successfully!");
+      window.location.assign(`/rsvp/${partyId}`);
+    }
+  }, [emailData]);
   const [renderPartyTheme, setRenderPartyTheme] = useState(ThemeOne);
 
   useEffect(() => {
@@ -104,94 +104,108 @@ const MyPartyPage = () => {
       document.body.style.backgroundImage = `url(${backgroundOne})`;
     }
   }, [party.theme]);
-  
+
   if (loading) {
     return <div>Loading...</div>;
   }
   console.log("party details", party);
+
   let date = dateFormat(party.date)
   let time = parseTime(party.time)
+
   return (
     <div className="emailer-container">
       <div className="left-container">
-        <div className='invitation'>
-          <img className='theme-three' src={renderPartyTheme} alt='dance-party-theme' />
-          <div className='invitation-fields'>
-              <div className='you-r-invited'>YOU'RE INVITED!</div>
-              <div className='data-area'>{party.hostName}</div>
-              <p className='label label-p' > would like to invite you to their birthday party!</p>
-              <div className='label'>The party will be held at</div>
-              <div className="location data-area data-text">{party.location}</div>
-              <div className='label'>The date of the party will be</div>
-              <div className='date-time'>
-                <div className='date data-area data-text'>{date}</div>
-              </div>
-              <div className='label'>The party will start at</div>
-              <div className='date-time'>
-                <div className='time data-area data-text'>{time}</div>
-              </div>
+        <div className="invitation">
+          <img
+            className="theme-three"
+            src={renderPartyTheme}
+            alt="dance-party-theme"
+          />
+          <div className="invitation-fields">
+            <div className="you-r-invited">YOU'RE INVITED!</div>
+            <div className="data-area">{party.hostName}</div>
+            <p className="label label-p">
+              {" "}
+              would like to invite you to their birthday party!
+            </p>
+            <div className="label">The party will be held at</div>
+            <div className="location data-area data-text">{party.location}</div>
+            <div className="label">The date of the party will be</div>
+            <div className="date-time">
+              <div className="date data-area data-text">{date}</div>
+            </div>
+            <div className="label">The party will start at</div>
+            <div className="date-time">
+              <div className="time data-area data-text">{time}</div>
+            </div>
           </div>
         </div>
       </div>
       <div className="right-container center">
         {/* <div className="content-container"> */}
-          <h1 className="guestlist-heading">Write a message to guests:</h1>
-          <div className="messages-container">
-                <textarea
-                  className="host-message data-area"
-                  placeholder="Message to guests here..."
-                  rows="2"
-                  maxLength="500"
-                  name="description"
-                  value={descState.description}
-                  onChange={handleDescForm}
-                  onBlur={updateDesc}
-                ></textarea>
-          </div>
-          <h1 className="guestlist-heading">Guest List</h1>
-          <div className="email-form">
-          {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
-            <form onSubmit={handleFormSubmit}>
-              <label htmlFor="email black">Enter an Email address:</label>
-              <input
-                className="guest-name"
-                type="text"
-                name="email"
-                value={formState.email}
-                onChange={handleGuestChange}
-              />
-              <button className="invite-guest-btn" type="submit">
-                Invite Guest
-              </button>
-            </form>
-            {error && <div style={{ color: "red" }}>Something went wrong.</div>}
-            {dupeState && (
-              <div style={{ color: "red" }} /* Because i was told to */>
-                This guest was already invited.
-              </div>
-            )}
-            <form>
-              <div className="invite-guests-container">
-                {/* <h1 className="guest-list-heading">Guest list:</h1> */}
-                <div className="guests-list">
-                  <p>Here is the list of guests you have invited:</p>
-                  <ul>
-                    {party.guests.map((guest) => (
-                      <li className="guest" key={guest}>
-                        {guest}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-            </form>
-          </div>
-          <div>
-            <button className="send-email" onClick={() => sendEmail({ variables: {id : partyId }})}>Email my invite!</button>
+        <h1 className="guestlist-heading">Write a message to your guests:</h1>
+        <div className="messages-container">
+          <textarea
+            className="host-message data-area"
+            placeholder="Message goes here..."
+            rows="2"
+            maxLength="500"
+            name="description"
+            value={descState.description}
+            onChange={handleDescForm}
+            onBlur={updateDesc}
+          ></textarea>
         </div>
+        <h1 className="guestlist-heading guestlist-h1">Create your guest List</h1>
+        <div className="email-form">
+          {/* <h1 className="guestlist-heading">Create your guest list:</h1> */}
+          <form onSubmit={handleFormSubmit} className='invite-guests-here'>
+            <label htmlFor="email"className='enter-email'>Enter an email address:</label>
+            <input
+              className="guest-name"
+              type="text"
+              name="email"
+              value={formState.email}
+              onChange={handleGuestChange}
+            />
+            <button className="invite-guest-btn" type="submit">
+              Invite Guest
+            </button>
+          </form>
+          {error && <div style={{ color: "red" }}>Something went wrong.</div>}
+          {dupeState && (
+            <div style={{ color: "red" }} /* Because i was told to */>
+              This guest was already invited.
+            </div>
+          )}
+          <form>
+            <div className="invite-guests-container">
+              {/* <h1 className="guest-list-heading">Guest list:</h1> */}
+              <div className="guests-list">
+                <p className='email-list-of-guests'>Here is the list of guests you have invited:</p>
+                <ul>
+                  {party.guests.map((guest) => (
+                    <li className="guest" key={guest}>
+                      {guest}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <button
+            className="send-email"
+            onClick={() => sendEmail({ variables: { id: partyId } })}
+          >
+            Email my invite!
+          </button>
+          {emailError && <div style={{color: "red"}}>Uh, oh. Something went wrong. Do you have guests on your list?</div>}
         </div>
       </div>
+    </div>
     // </div>
   );
 };

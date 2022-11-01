@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Logo from "./assets/birthday-plan-it-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Auth from "../utils/auth";
-import { useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { QUERY_USER_PARTY } from "../utils/queries";
 
 const Navbar = () => {
@@ -18,10 +18,19 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  // const { loading, data } = useQuery(QUERY_USER_PARTY, {
-  //   variables: { username: Auth.getProfile().data.username },
-  // });
-  // const myPartyId = data.user.party._id;
+  const [getParty, { loading, error, data }] = useLazyQuery(QUERY_USER_PARTY);
+
+  async function linkToParty() {
+    const myParty = await getParty({
+      variables: { username: Auth.getProfile().data.username },
+    });
+    const myPartyId = myParty.data.user.party?._id || false;
+    if (myPartyId) {
+      window.location.assign(`/rsvp/${myPartyId}`);
+    } else {
+      alert("Please create a party first");
+    }
+  }
 
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -53,9 +62,7 @@ const Navbar = () => {
 
         {Auth.loggedIn() ? (
           <>
-            <li>
-              {/* <Link to={`/rsvp/${myPartyId}`}>My Party</Link> */}
-            </li>
+            <li>{<Link onClick={linkToParty}>My Party</Link>}</li>
             <li className="login-btn">
               <Link onClick={logout}>Logout</Link>
             </li>
