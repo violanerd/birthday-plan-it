@@ -4,15 +4,13 @@
     <img src="./client/src/components/assets/birthday-plan-it-logo.png" width="400px" /> 
 </div>
 
-## **An app to plan and personalize your birthday party by sending your guests a cool invitation so they can RSVP!**
+## **An app to plan and personalize your birthday party by creating a cool invitation and RSVP list. Let's get the party started!**
 
 <br>
 
 ## **Purpose:**
 
-Welcome to the Birthday Plan It app where we help you plan your birthday party by sending your guests a cool invitation. Simply sign up to create an account then pick a theme from the thumbnails below. Once you pick a theme you will fill out the form and submit it to generate an invitation link. Then you'll create
-an email list containing your guests emails that you want the invitation sent to. So let's get the party started!
-
+Welcome to the Birthday Plan It app where we help you plan your birthday party by creating a cool invitation. Simply sign up to create an account then pick a theme from the thumbnails below. Once you’ve selected a theme you will fill out the form to create your invitation. Then you’ll create a list of email addresses to send the invite link to. Guests will be able to signup and rsvp to your party. On the My Party page you’ll then be able to see your rsvp list! 
 <br>
 
 ## **Heroku App Link:**
@@ -62,6 +60,8 @@ an email list containing your guests emails that you want the invitation sent to
 
 `npm i`
 
+For development purposes, we used [Mailtrap.io](https://mailtrap.io/) to work with Nodemailer. Singup for an account and imput your credentials into the .env file for email functionality.
+
 <br>
 
 ## **Start:**
@@ -88,7 +88,3 @@ an email list containing your guests emails that you want the invitation sent to
 
 ### Madalyne Cross, Joshua Haddix & Ron Dronet
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dd608fb41bf9ba1ed93a5cc7cedcd41bcd432c4e
