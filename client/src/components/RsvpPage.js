@@ -113,7 +113,7 @@ const RsvpPage = () => {
       <div className="right-container">
         <div className="rsvp-content-container">
           <div className="rsvp-guests-container">
-            <h1 className="guestlist-heading rsvp-heading">To RSVP input in your email address:</h1>
+            <h1 className="guestlist-heading rsvp-heading">Sign up and login with your email address to RSVP:</h1>
             <div className="guests-list">
               <ul>
                 {party.guests.map((guest) => (
