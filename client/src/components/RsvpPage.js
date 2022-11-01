@@ -25,8 +25,12 @@ const RsvpPage = () => {
   });
   const party = data?.partyById || {};
 
-  const myData = Auth.getProfile();
-  const me = myData?.data || {};
+  var myData = {};
+  var me = { email: "" };
+  if (Auth.loggedIn()) {
+    myData = Auth.getProfile();
+    me = myData?.data || { email: "" };
+  }
 
   console.log("me", me);
   console.log("party details", party);
