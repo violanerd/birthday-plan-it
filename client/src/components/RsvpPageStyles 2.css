@@ -1,0 +1,90 @@
+.rsvp-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 2.2rem;
+}
+
+.rsvp-rt-container {
+  width: 35%;
+}
+
+.rsvp-btn {
+  background-color: rgb(0, 194, 0);
+  outline: none;
+  border: none;
+  padding: 4px 6px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.has-rsvpd {
+  background-color: rgb(0, 194, 0);
+  outline: none;
+  border: none;
+  padding: 4px 6px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+.decline-btn {
+  background-color: var(--header-red);
+  outline: none;
+  border: none;
+  padding: 4px 6px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.has-declined {
+  background-color: var(--header-red);
+  outline: none;
+  border: none;
+  padding: 4px 14px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+.rsvp-guest {
+  font-weight: 500;
+  line-height: 35px;
+}
+
+@media screen and (max-width: 992px) {
+  .rsvp-rt-container {
+    width: 54%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rsvp-rt-container {
+    width: 71%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rsvp-rt-container {
+    width: 88%;
+  }
+
+  .rsvp-invitation-fields {
+    left: 75px;
+    width: 65%;
+  }
+
+  .rsvp-guest {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
